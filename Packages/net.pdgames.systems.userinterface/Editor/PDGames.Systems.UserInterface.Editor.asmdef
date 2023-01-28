@@ -1,0 +1,15 @@
+{
+    "name": "PDGames.Systems.UserInterface.Editor",
+    "references": [
+        "PDGames.Systems.UserInterface.Runtime"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
