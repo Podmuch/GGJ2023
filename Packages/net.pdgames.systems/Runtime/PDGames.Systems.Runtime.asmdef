@@ -1,0 +1,17 @@
+{
+    "name": "PDGames.Systems.Runtime",
+    "rootNamespace": "",
+    "references": [
+        "PDGames.DIContainer.Runtime",
+        "PDGames.EventBus.Runtime"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

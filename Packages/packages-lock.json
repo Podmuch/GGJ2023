@@ -262,6 +262,47 @@
       },
       "url": "https://packages.unity.com"
     },
+    "net.pdgames.dicontainer": {
+      "version": "file:net.pdgames.dicontainer",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
+    "net.pdgames.eventbus": {
+      "version": "file:net.pdgames.eventbus",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
+    "net.pdgames.systems": {
+      "version": "file:net.pdgames.systems",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {
+        "net.pdgames.eventbus": "1.0.0",
+        "net.pdgames.dicontainer": "1.0.0"
+      }
+    },
+    "net.pdgames.systems.commands": {
+      "version": "file:net.pdgames.systems.commands",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {
+        "net.pdgames.systems": "1.0.0",
+        "net.pdgames.eventbus": "1.0.0",
+        "net.pdgames.dicontainer": "1.0.0"
+      }
+    },
+    "net.pdgames.systems.loader": {
+      "version": "file:net.pdgames.systems.loader",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {
+        "net.pdgames.systems": "1.0.0",
+        "net.pdgames.eventbus": "1.0.0",
+        "net.pdgames.dicontainer": "1.0.0"
+      }
+    },
     "com.unity.modules.ai": {
       "version": "1.0.0",
       "depth": 0,

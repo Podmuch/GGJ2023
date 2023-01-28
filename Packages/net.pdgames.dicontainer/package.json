@@ -1,0 +1,18 @@
+{
+	"name":"net.pdgames.dicontainer",
+	"version":"1.1.0",
+	"displayName":"DI Container",
+	"description":"Simple Dependency Injection container which can be used as a base element to manage objects/references in your application.",
+	"unity":"2020.3",
+	"author":{
+		"name":"PDGames",
+		"url":"https://pdgames.net/en/"
+	},
+	"dependencies":{
+	
+	},
+	"keywords":[
+		"DependencyInjection",
+		"Tools"
+	]
+}
