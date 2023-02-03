@@ -11,13 +11,16 @@ namespace BoxColliders.Game
             Add(new GameInitializeGameplayStateDataSystem(eventBus, diContainer, diContext));
             Add(new GameInitializeTreeStateDataSystem(eventBus, diContainer, diContext));
             Add(new GameInitializeBranchesListSystem(eventBus, diContainer, diContext));
+            Add(new GameInitializeGameplaySunDataSystem(eventBus, diContainer, diContext));
             
             Add(new GameStartGameplaySystem(eventBus, diContainer, diContext));
             
             Add(new GameWaterProductionSystem(eventBus, diContainer, diContext));
             Add(new GameAirProductionSystem(eventBus, diContainer, diContext));
             Add(new GameSunProductionSystem(eventBus, diContainer, diContext));
-            
+            Add(new GameStartSunReactSystem(eventBus, diContainer, diContext));
+            Add(new GameSunSystem(eventBus, diContainer, diContext));
+
             Add(new GameClearDiContainerSystem(eventBus, diContainer, diContext));
         }
     }
