@@ -2,6 +2,7 @@ using PDGames.DIContainer;
 using PDGames.EventBus;
 using BoxColliders.Game;
 using PDGames.Systems.Loader;
+using UnityEngine;
 using Utils;
 
 namespace BoxColliders.Project
@@ -39,6 +40,10 @@ namespace BoxColliders.Project
         {
             var diContext = diContainer.GetReference<GameplayContextsHolder>(null).GameContext;
             diContainer.Fetch(this, diContext);
+            
+            var sunPrefab = Resources.Load<SunController>("Controllers/SunController");
+            var sunController = GameObject.Instantiate(sunPrefab);
+            diContainer.Register(sunController, diContext);
             
             isReady = true;
         }

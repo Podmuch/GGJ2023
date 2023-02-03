@@ -9,8 +9,12 @@ namespace BoxColliders.Game
         public GameSystemsCascadeData(IEventBus eventBus, IDIContainer diContainer, object diContext)
         {
             Add(new GameInitializeGameplayStateDataSystem(eventBus, diContainer, diContext));
+            Add(new GameInitializeGameplaySunDataSystem(eventBus, diContainer, diContext));
             
             Add(new GameStartGameplaySystem(eventBus, diContainer, diContext));
+            
+            Add(new GameStartSunReactSystem(eventBus, diContainer, diContext));
+            Add(new GameSunSystem(eventBus, diContainer, diContext));
             
             Add(new GameClearDiContainerSystem(eventBus, diContainer, diContext));
         }
