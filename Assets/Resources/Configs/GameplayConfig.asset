@@ -12,22 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f6e0457c10c4d67bb1b6e7f5c1d07f7, type: 3}
   m_Name: GameplayConfig
   m_EditorClassIdentifier: 
-  MinTotalUnits: 1
-  MaxTotalUnits: 100
-  DefaultUnitsSetup:
-  - UnitsCount: 10
-    ShapeVariant: Cube
-    SizeVariant: Small
-    ColorVariant: Blue
-  - UnitsCount: 5
-    ShapeVariant: Sphere
-    SizeVariant: Small
-    ColorVariant: Green
-  - UnitsCount: 5
-    ShapeVariant: Sphere
-    SizeVariant: Big
-    ColorVariant: Red
-  DistanceBetweenUnits: 2
-  MovementSpeedFactor: 1
-  AttackStrengthFactor: 1
-  AttackCooldownFactor: 1
+  MaxWaterCapacity: 100
+  BranchWaterProduction: 50
+  WaterToEnergyConversion: 25
+  MaxSunCapacity: 100
+  BranchSunProduction: 50
+  SunToEnergyConversion: 25
+  MaxAirCapacity: 100
+  BranchAirProduction: 50
+  AirToEnergyConversion: 25
