@@ -1,0 +1,21 @@
+{
+	"name":"net.pdgames.systems.commands",
+	"version":"1.0.0",
+	"displayName":"Systems - Commands",
+	"description":"Simple commands module to organize code execution based on systems framework.",
+	"unity":"2020.3",
+	"author":{
+		"name":"PDGames",
+		"url":"https://pdgames.net/en/"
+	},
+	"dependencies":{
+		"net.pdgames.systems": "1.0.0",
+		"net.pdgames.eventbus": "1.0.0",
+		"net.pdgames.dicontainer": "1.0.0"
+	},
+	"keywords":[
+		"Systems",
+		"Commands",
+		"Tools"
+	]
+}

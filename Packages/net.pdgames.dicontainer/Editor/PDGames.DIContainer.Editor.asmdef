@@ -1,0 +1,18 @@
+{
+    "name": "PDGames.DIContainer.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:4e967a19adbcd7a4595da4a153d7c47c"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
