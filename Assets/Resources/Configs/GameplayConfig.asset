@@ -25,3 +25,5 @@ MonoBehaviour:
   EnergyForGrow: 5
   ElementsCount: 2
   TreePosition: {x: 3, y: 0, z: 0}
+  GroundLevel: 0
+  ElementSize: 1

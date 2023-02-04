@@ -19,6 +19,8 @@ namespace BoxColliders.Game
         private GameBranchesList gameBranchesList;
         [DIInject]
         private GameRootsList gameRootsList;
+        [DIInject] 
+        private GameplayBranchIndicatorData branchIndicatorData;
 
         private IDIContainer diContainer;
         private object diContext;
@@ -61,8 +63,7 @@ namespace BoxColliders.Game
             var branchInstance = GameObject.Instantiate<GameBranchController>(branchPrefab, branchSlot.Transform);
             branchInstance.Initialize(eventBus, diContainer, diContext);
             ResetTransform(branchInstance.transform);
-            gameBranchesList.EmptySlots.AddRange(branchInstance.GetBranchSlots());
-            gameBranchesList.Branches.Add(branchInstance);
+            AddBranchToList(branchInstance);
         }
 
         private void GenerateRoot()
@@ -76,8 +77,7 @@ namespace BoxColliders.Game
 
             var rootInstance = GameObject.Instantiate<GameRootController>(rootPrefab, rootSlot.Transform);
             ResetTransform(rootInstance.transform);
-            gameRootsList.EmptySlots.AddRange(rootInstance.GetRootSlots());
-            gameRootsList.Roots.Add(rootInstance);
+            AddRootToList(rootInstance);
         }
         
         private void ResetTransform(Transform transform)
@@ -85,6 +85,56 @@ namespace BoxColliders.Game
             transform.localPosition = Vector3.zero;
             transform.localRotation = Quaternion.identity;
             transform.localScale = Vector3.one;
+        }
+
+        private void AddBranchToList(GameBranchController branchInstance)
+        {
+            bool added = false;
+            for (int i = 0; !added && i < gameBranchesList.Branches.Count; i++)
+            {
+                if (gameBranchesList.Branches[i].GetStatsIconTransform().position.x > branchInstance.GetStatsIconTransform().position.x)
+                {
+                    if (i < branchIndicatorData.CurrentBranchIndex)
+                    {
+                        branchIndicatorData.CurrentBranchIndex++;
+                    }
+                    gameBranchesList.Branches.Insert(i, branchInstance);
+                    added = true;
+                }
+            }
+            if (!added) gameBranchesList.Branches.Add(branchInstance);
+
+             var emptySlots = branchInstance.GetBranchSlots();
+            for (int i = 0; i < emptySlots.Count; i++)
+            {
+                if (emptySlots[i].Transform.position.y - gameplayConfig.ElementSize > gameplayConfig.GroundLevel)
+                {
+                    gameBranchesList.EmptySlots.Add(emptySlots[i]);
+                }
+            }
+        }
+
+        private void AddRootToList(GameRootController rootInstance)
+        {
+            bool added = false;
+            for (int i = 0; !added && i < gameRootsList.Roots.Count; i++)
+            {
+                if (gameRootsList.Roots[i].transform.position.x > rootInstance.transform.position.x)
+                {
+                    gameRootsList.Roots.Insert(i, rootInstance);
+                    added = true;
+                }
+            }
+            if (!added) gameRootsList.Roots.Add(rootInstance);
+
+            var emptySlots = rootInstance.GetRootSlots();
+            for (int i = 0; i < emptySlots.Count; i++)
+            {
+                if (emptySlots[i].Transform.position.y + gameplayConfig.ElementSize < gameplayConfig.GroundLevel)
+                {
+                    gameRootsList.EmptySlots.Add(emptySlots[i]);
+                }
+            }
         }
     }
 }

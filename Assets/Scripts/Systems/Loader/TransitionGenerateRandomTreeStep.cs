@@ -80,7 +80,19 @@ namespace BoxColliders.Project
                 var branchInstance = GameObject.Instantiate<GameBranchController>(branchPrefab, branchSlot.Transform);
                 branchInstance.DisableStateIcon();
                 ResetTransform(branchInstance.transform);
-                branchSlots.AddRange(branchInstance.GetBranchSlots());
+                AddEmptyBranchSlots(branchSlots, branchInstance);
+            }
+        }
+
+        private void AddEmptyBranchSlots(List<SlotData> branchSlots, GameBranchController branchInstance)
+        {
+            var emptySlots = branchInstance.GetBranchSlots();
+            for (int i = 0; i < emptySlots.Count; i++)
+            {
+                if (emptySlots[i].Transform.position.y - gameplayConfig.ElementSize > gameplayConfig.GroundLevel)
+                {
+                    branchSlots.Add(emptySlots[i]);
+                }
             }
         }
 
@@ -99,7 +111,19 @@ namespace BoxColliders.Project
 
                 var rootInstance = GameObject.Instantiate<GameRootController>(rootPrefab, rootSlot.Transform);
                 ResetTransform(rootInstance.transform);
-                rootSlots.AddRange(rootInstance.GetRootSlots());
+                AddEmptyRootSlots(rootSlots, rootInstance);
+            }
+        }
+
+        private void AddEmptyRootSlots(List<SlotData> rootSlots, GameRootController rootInstance)
+        {
+            var emptySlots = rootInstance.GetRootSlots();
+            for (int i = 0; i < emptySlots.Count; i++)
+            {
+                if (emptySlots[i].Transform.position.y + gameplayConfig.ElementSize < gameplayConfig.GroundLevel)
+                {
+                    rootSlots.Add(emptySlots[i]);
+                }
             }
         }
 
