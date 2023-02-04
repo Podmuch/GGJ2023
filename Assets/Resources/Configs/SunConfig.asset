@@ -18,21 +18,30 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -3
-        inSlope: 13
-        outSlope: 13
-        tangentMode: 34
+        value: -5
+        inSlope: 1.3924059
+        outSlope: 1.3924059
+        tangentMode: 0
         weightedMode: 0
         inWeight: 0
+        outWeight: 0.8638497
+      - serializedVersion: 3
+        time: 0.5
+        value: 2.5002484
+        inSlope: 15
+        outSlope: 15
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1
         value: 10
-        inSlope: 13
-        outSlope: 13
-        tangentMode: 34
+        inSlope: 6.8201303
+        outSlope: 6.8201303
+        tangentMode: 0
         weightedMode: 0
-        inWeight: 0.33333334
+        inWeight: 0.30046964
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -43,17 +52,17 @@ MonoBehaviour:
       - serializedVersion: 3
         time: 0
         value: 0
-        inSlope: 6
-        outSlope: 6
-        tangentMode: 34
+        inSlope: 42.051716
+        outSlope: 42.051716
+        tangentMode: 0
         weightedMode: 0
         inWeight: 0
-        outWeight: 0.33333334
+        outWeight: 0.04276838
       - serializedVersion: 3
-        time: 0.5
-        value: 3
-        inSlope: 0.10849428
-        outSlope: 0.10849428
+        time: 0.5023777
+        value: 7.5433216
+        inSlope: 0.1885109
+        outSlope: 0.1885109
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
@@ -61,13 +70,13 @@ MonoBehaviour:
       - serializedVersion: 3
         time: 1.0169983
         value: 0.010192871
-        inSlope: -5.7830114
-        outSlope: -5.7830114
-        tangentMode: 34
+        inSlope: -42.373676
+        outSlope: -42.373676
+        tangentMode: 0
         weightedMode: 0
-        inWeight: 0.33333334
+        inWeight: 0.03711196
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    speed: 0.1
+    time: 30

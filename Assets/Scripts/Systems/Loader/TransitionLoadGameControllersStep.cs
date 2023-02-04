@@ -49,15 +49,15 @@ namespace BoxColliders.Project
             var diContext = diContainer.GetReference<GameplayContextsHolder>(null).GameContext;
             diContainer.Fetch(this, diContext);
             
-            var sunPrefab = Resources.Load<SunController>("Controllers/SunController");
-            var sunController = GameObject.Instantiate(sunPrefab);
-            diContainer.Register(sunController, diContext);
-
             CreateGameTree(diContext);
+            
+            CreateSun(diContext);
+
+            CreateBranchIndicator(diContext);
             
             isReady = true;
         }
-
+        
         private void CreateGameTree(object diContext)
         {
             RemoveOldTree(diContext);
@@ -136,6 +136,20 @@ namespace BoxColliders.Project
             transform.localPosition = Vector3.zero;
             transform.localRotation = Quaternion.identity;
             transform.localScale = Vector3.one;
+        }
+        
+        private void CreateSun(object diContext)
+        {
+            var sunPrefab = Resources.Load<SunController>(resourcesConfig.SunPrefabPath);
+            var sunController = GameObject.Instantiate(sunPrefab);
+            diContainer.Register(sunController, diContext);
+        }
+        
+        private void CreateBranchIndicator(object diContext)
+        {
+            var branchIndicator = Resources.Load<BranchIndicator>(resourcesConfig.BranchIndicatorPrefabPath);
+            var branchIndicatorController = GameObject.Instantiate(branchIndicator);
+            diContainer.Register(branchIndicatorController, diContext);
         }
     }
 }
