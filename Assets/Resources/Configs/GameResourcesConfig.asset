@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f010cce5a694195976ae08ef4cc3c02, type: 3}
   m_Name: GameResourcesConfig
   m_EditorClassIdentifier: 
-  TreePrefabPath: Game/Tree
-  BranchPrefabPath: Game/Branch
+  TreePrefabPath: Game/Tree_D
+  BranchPrefabPath: Game/Branch_D
   BranchIndicatorPrefabPath: Controllers/BranchIndicator
   SunPrefabPath: Controllers/SunController
-  RootPrefabPath: Game/Root
+  RainCloudPath: Controllers/RainCloud
+  RootPrefabPath: Game/Root_D
   stateIcons:
   - State: 0
     Icon: {fileID: 21300000, guid: f3f76029e5101418c8dffa02f800cdea, type: 3}

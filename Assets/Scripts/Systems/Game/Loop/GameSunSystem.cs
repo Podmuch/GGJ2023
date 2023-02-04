@@ -13,6 +13,8 @@ namespace BoxColliders.Game
         private GameplaySunData sunData = default;
         [DIInject] 
         private SunController sunController = default;
+        [DIInject] 
+        private GameplayDayNightCycleData dayNightCycleData = default;
         
         private IDIContainer diContainer;
         private object diContext;
@@ -32,14 +34,12 @@ namespace BoxColliders.Game
         {
             if (!stateData.IsStarted) return;
 
-            if (!sunData.isMoving) return;
-
-            if (sunData.currentTime <= sunData.currentSunPath.time)
+            if (!dayNightCycleData.isDay) return;
+            
+            if (dayNightCycleData.currentCycleTime <= dayNightCycleData.endCycleTime)
             {
-                sunData.currentTime += Time.deltaTime;
-                sunData.sunFactor = Mathf.InverseLerp(0, sunData.currentSunPath.time, sunData.currentTime);
+                sunData.sunFactor = Mathf.InverseLerp(0, dayNightCycleData.endCycleTime, dayNightCycleData.currentCycleTime);
             }
-            else sunData.isMoving = false;
 
             var sunPosition = sunData.currentSunPath.Evaluate(sunData.sunFactor);
             sunController.SetPosition(sunPosition);

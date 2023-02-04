@@ -52,6 +52,7 @@ namespace BoxColliders.Project
             CreateGameTree(diContext);
             
             CreateSun(diContext);
+            CreateCloudController(diContext);
 
             CreateBranchIndicator(diContext);
             
@@ -143,6 +144,14 @@ namespace BoxColliders.Project
             var sunPrefab = Resources.Load<SunController>(resourcesConfig.SunPrefabPath);
             var sunController = GameObject.Instantiate(sunPrefab);
             diContainer.Register(sunController, diContext);
+        }
+
+        private void CreateCloudController(object diContext)
+        {
+            var cloudPrefab = Resources.Load<RainCloudController>(resourcesConfig.RainCloudPath);
+
+            var cloudInstance = GameObject.Instantiate<RainCloudController>(cloudPrefab);
+            diContainer.Register(cloudInstance, diContext);
         }
         
         private void CreateBranchIndicator(object diContext)

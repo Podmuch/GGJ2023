@@ -339,7 +339,7 @@ MonoBehaviour:
   - Transform: {fileID: 6861182925364859035}
   - Transform: {fileID: 3070478357800196044}
   stateIcon: {fileID: 135884458996909196}
-  indicatorParent: {fileID: 0}
+  indicatorParent: {fileID: 4827259950534156795}
   stateData:
     State: 0
     IsClosedToWeather: 0

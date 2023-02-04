@@ -29,8 +29,6 @@ namespace BoxColliders.Game
         protected override void Execute(List<LoaderFinishedEvent> entities)
         {
             stateData.IsStarted = true;
-            
-            eventBus.Fire<StartSunEvent>();
         }
     }
 }
