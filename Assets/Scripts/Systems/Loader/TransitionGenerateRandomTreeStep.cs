@@ -76,6 +76,7 @@ namespace BoxColliders.Project
                 branchSlots.RemoveAt(branchSlotId);
 
                 var branchInstance = GameObject.Instantiate<GameBranchController>(branchPrefab, branchSlot);
+                branchInstance.DisableStateIcon();
                 ResetTransform(branchInstance.transform);
                 branchSlots.AddRange(branchInstance.GetBranchSlots());
             }

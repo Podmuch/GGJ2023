@@ -23,6 +23,9 @@ namespace BoxColliders.Configs
         public float BranchAirProduction;
         public float AirToEnergyConversion;
 
+        [Header("Starting Params")] 
+        public int ElementsCount;
+        
         [Header("Map")] 
         public Vector3 TreePosition;
     }

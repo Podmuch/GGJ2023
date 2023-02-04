@@ -15,3 +15,12 @@ MonoBehaviour:
   TreePrefabPath: Game/Tree
   BranchPrefabPath: Game/Branch
   RootPrefabPath: Game/Root
+  stateIcons:
+  - State: 0
+    Icon: {fileID: 21300000, guid: f3f76029e5101418c8dffa02f800cdea, type: 3}
+  - State: 1
+    Icon: {fileID: 21300000, guid: b7b98965225d74dc78b543b861fa0ba5, type: 3}
+  - State: 2
+    Icon: {fileID: 21300000, guid: 564f27d51cf5145f1b46612360d6251c, type: 3}
+  - State: 3
+    Icon: {fileID: 21300000, guid: 56911f7fe0b7d4f3dbe6c8e2bed2954f, type: 3}

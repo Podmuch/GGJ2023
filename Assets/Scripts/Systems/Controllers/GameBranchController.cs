@@ -1,15 +1,22 @@
+using System;
 using System.Collections.Generic;
 using BoxColliders.Configs;
 using PDGames.DIContainer;
 using PDGames.EventBus;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace BoxColliders.Game
 {
     public sealed class GameBranchController : MonoBehaviour
     {
+        [DIInject] 
+        private GameResourcesConfig resourcesConfig;
+        
         [SerializeField] 
         private List<Transform> branchSlots;
+        [SerializeField] 
+        private SpriteRenderer stateIcon;
         
         [DIInject]
         private GameplayConfig gameplayConfig;
@@ -19,7 +26,7 @@ namespace BoxColliders.Game
         private IEventBus eventBus;
         private IDIContainer diContainer;
         private object diContext;
-        
+
         public void Initialize(IEventBus eventBus, IDIContainer diContainer, object diContext)
         {
             this.eventBus = eventBus;
@@ -27,6 +34,15 @@ namespace BoxColliders.Game
             this.diContext = diContext;
             
             diContainer.Fetch(this, diContext);
+            stateData.State = (BranchState)Random.Range(0, Enum.GetNames(typeof(BranchState)).Length);
+            
+            stateIcon.gameObject.SetActive(true);
+            stateIcon.sprite = resourcesConfig.GetStateIcon(stateData.State);
+        }
+
+        public void DisableStateIcon()
+        {
+            stateIcon.gameObject.SetActive(false);
         }
         
         public bool CanProduceWater()
