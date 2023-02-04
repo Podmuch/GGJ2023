@@ -24,7 +24,6 @@ namespace BoxColliders.Game
         [DIInject]
         private GameplayConfig gameplayConfig;
         
-        [SerializeField]
         private GameBranchStateData stateData = new GameBranchStateData();
         
         private IEventBus eventBus;

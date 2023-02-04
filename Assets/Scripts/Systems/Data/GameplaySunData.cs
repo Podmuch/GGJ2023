@@ -5,10 +5,8 @@ namespace BoxColliders.Game
 {
     public sealed class GameplaySunData
     {
-        public bool isMoving;
         public SunPathData currentSunPath;
         public float sunFactor;
-        public float currentTime;
     }
 
     [Serializable]
@@ -16,7 +14,6 @@ namespace BoxColliders.Game
     {
         public AnimationCurve xCurve;
         public AnimationCurve yCurve;
-        public float time;
 
         public Vector2 Evaluate(float factor)
         {
