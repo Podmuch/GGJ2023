@@ -61,7 +61,7 @@ namespace BoxColliders.Game
             gameBranchesList.EmptySlots.RemoveAt(branchSlotId);
             
             var branchInstance = GameObject.Instantiate<GameBranchController>(branchPrefab, branchSlot.Transform);
-            branchInstance.Initialize(eventBus, diContainer, diContext);
+            branchInstance.Initialize(eventBus, diContainer, diContext, true);
             ResetTransform(branchInstance.transform);
             AddBranchToList(branchInstance);
         }
@@ -76,6 +76,7 @@ namespace BoxColliders.Game
             gameRootsList.EmptySlots.RemoveAt(rootSlotId);
 
             var rootInstance = GameObject.Instantiate<GameRootController>(rootPrefab, rootSlot.Transform);
+            rootInstance.StartGrowAnimation();
             ResetTransform(rootInstance.transform);
             AddRootToList(rootInstance);
         }

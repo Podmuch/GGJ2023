@@ -20,5 +20,11 @@ namespace BoxColliders.Game
             if (animator == null) animator = GetComponent<Animator>();
             animator.Play(animName);
         }
+
+        public void StartGrowAnimation()
+        {
+            if (animator == null) animator = GetComponent<Animator>();
+            animator.SetTrigger("IsGrowing");
+        }
     }
 }

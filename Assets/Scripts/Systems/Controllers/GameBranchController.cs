@@ -34,7 +34,7 @@ namespace BoxColliders.Game
         
         private int stateEnumLength;
         
-        public void Initialize(IEventBus eventBus, IDIContainer diContainer, object diContext)
+        public void Initialize(IEventBus eventBus, IDIContainer diContainer, object diContext, bool newBranch = false)
         {
             this.eventBus = eventBus;
             this.diContainer = diContainer;
@@ -46,13 +46,20 @@ namespace BoxColliders.Game
 
             SetData(randomState);
             stateData.isTakingAir = true;
-            ForceAnimationState("Idle");
+            if (!newBranch) ForceAnimationState("Idle");
+            else StartGrowAnimation();
         }
 
         public void ForceAnimationState(string animName)
         {
             if (animator == null) animator = GetComponent<Animator>();
             animator.Play(animName);
+        }
+
+        public void StartGrowAnimation()
+        {
+            if (animator == null) animator = GetComponent<Animator>();
+            animator.SetTrigger("Grow");
         }
 
         public void SetNextState()
