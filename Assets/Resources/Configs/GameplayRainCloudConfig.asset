@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e9c877d7add41cd82dd4bd3129a5b1e, type: 3}
   m_Name: GameplayRainCloudConfig
   m_EditorClassIdentifier: 
-  MinWaitingTime: 2
-  MaxWaitingTime: 5
-  MinMovingTime: 5
-  MaxMovingTime: 15
+  MinWaitingTime: 1.5
+  MaxWaitingTime: 2.5
+  MinMovingTime: 2.5
+  MaxMovingTime: 7.5
   LeftPosition: {x: -5, y: 7, z: 0}
   RightPosition: {x: 11, y: 7, z: 0}
   WaitingPosition: {x: -1000, y: 7, z: 0}

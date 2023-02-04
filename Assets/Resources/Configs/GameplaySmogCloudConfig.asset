@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 570a4844060540db8ad928cff22ae659, type: 3}
   m_Name: GameplaySmogCloudConfig
   m_EditorClassIdentifier: 
-  MinBranchesForSmog: 5
-  MinWaitingTime: 2
-  MaxWaitingTime: 5
-  MinMovingTime: 5
+  MinBranchesForSmog: 3
+  MinWaitingTime: 1.5
+  MaxWaitingTime: 2.5
+  MinMovingTime: 2.5
   MaxMovingTime: 15
   LeftPosition: {x: -5, y: 7, z: 0}
   RightPosition: {x: 11, y: 7, z: 0}

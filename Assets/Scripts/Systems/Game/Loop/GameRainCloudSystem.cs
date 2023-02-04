@@ -4,6 +4,7 @@ using PDGames.EventBus;
 using PDGames.Systems;
 using Systems.Data;
 using UnityEngine;
+using Utils;
 
 namespace BoxColliders.Game
 {
@@ -17,7 +18,10 @@ namespace BoxColliders.Game
         private RainCloudController rainCloudController = default;
         [DIInject] 
         private GameplayRainCloudConfig rainCloudConfig = default;
+        [DIInject] 
+        private AudioController audioController = default;
 
+        private AudioSource rainAudio;
         private IEventBus evenBus;
         private IDIContainer diContainer;
         private object diContext;
@@ -40,9 +44,9 @@ namespace BoxColliders.Game
 
             if (!rainCloudData.IsWaiting && !rainCloudData.IsMoving)
             {
-                bool startFromMoving = Random.Range(0.0f, 1.0f) > 0.5f;
+                var startFromMoving = Random.Range(0.0f, 1.0f) > 0.5f;
                 if (startFromMoving) StartMoving();
-                else StartWaiting();
+                    else StartWaiting();
             }
             else if (rainCloudData.IsWaiting)
             {
@@ -61,6 +65,8 @@ namespace BoxColliders.Game
 
             rainCloudData.MovingTimer = 0;
             rainCloudData.MovementDuration = Random.Range(rainCloudConfig.MinMovingTime, rainCloudConfig.MaxMovingTime);
+            
+            rainAudio = audioController.PlayAudio(DefinedAudioKeys.enviroRain, 0f, true);
 
             bool startFromLeft = Random.Range(0.0f, 1.0f) > 0.5f;
             if (startFromLeft)
@@ -86,6 +92,8 @@ namespace BoxColliders.Game
             rainCloudData.WaitingDuration = Random.Range(rainCloudConfig.MinWaitingTime, rainCloudConfig.MaxWaitingTime);
             
             rainCloudController.SetPosition(rainCloudConfig.WaitingPosition);
+            
+            rainAudio?.Stop();
         }
 
         private void UpdateWaiting()

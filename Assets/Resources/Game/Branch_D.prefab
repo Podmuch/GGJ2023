@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: f3f76029e5101418c8dffa02f800cdea, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -189,8 +189,8 @@ MonoBehaviour:
   - {fileID: 8709054354265547263}
   - {fileID: 3847610803215213609}
   m_Bounds:
-    m_Center: {x: 0.26229516, y: -0.01240693, z: 0}
-    m_Extent: {x: 0.27500007, y: 0.17732005, z: 0}
+    m_Center: {x: 0.26229525, y: -0.012406945, z: 0}
+    m_Extent: {x: 0.27500013, y: 0.1773201, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -526,8 +526,8 @@ MonoBehaviour:
   - {fileID: 1174059108161635500}
   - {fileID: 8033966507124794527}
   m_Bounds:
-    m_Center: {x: 0.2622951, y: -0.012406945, z: 0}
-    m_Extent: {x: 0.27500004, y: 0.17732003, z: 0}
+    m_Center: {x: 0.26229522, y: -0.012406915, z: 0}
+    m_Extent: {x: 0.27500013, y: 0.1773201, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -650,6 +650,7 @@ MonoBehaviour:
   - Transform: {fileID: 3070478357800196044}
   stateIcon: {fileID: 135884458996909196}
   indicatorParent: {fileID: 4827259950534156795}
+  animator: {fileID: 0}
 --- !u!61 &-6000595953554643019
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -980,8 +981,8 @@ MonoBehaviour:
   - {fileID: 6007280698796156112}
   - {fileID: 1664842349537590236}
   m_Bounds:
-    m_Center: {x: 0.26229525, y: -0.01240696, z: 0}
-    m_Extent: {x: 0.27500007, y: 0.1773201, z: 0}
+    m_Center: {x: 0.24024792, y: 0.060377017, z: 0}
+    m_Extent: {x: 0.24895574, y: 0.18903631, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1185,8 +1186,8 @@ MonoBehaviour:
   - {fileID: 8825795953280538059}
   - {fileID: 1874375501583311760}
   m_Bounds:
-    m_Center: {x: 0.26229507, y: -0.012406826, z: 0}
-    m_Extent: {x: 0.27499995, y: 0.17731994, z: 0}
+    m_Center: {x: 0.26229504, y: -0.0124069005, z: 0}
+    m_Extent: {x: 0.2749999, y: 0.17731999, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1360,8 +1361,8 @@ MonoBehaviour:
   - {fileID: 5221093454705920567}
   - {fileID: 8002444600537536403}
   m_Bounds:
-    m_Center: {x: 0.26229548, y: -0.012407109, z: 0}
-    m_Extent: {x: 0.27500004, y: 0.17732002, z: 0}
+    m_Center: {x: 0.2610502, y: -0.056740656, z: 0}
+    m_Extent: {x: 0.27691683, y: 0.18202898, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1995,8 +1996,8 @@ MonoBehaviour:
   - {fileID: 1671563073754291701}
   - {fileID: 412631415726187553}
   m_Bounds:
-    m_Center: {x: 0.0007199943, y: 0.0019500852, z: 0}
-    m_Extent: {x: 0.26428002, y: 0.9080502, z: 0}
+    m_Center: {x: 0.00026255846, y: 0.0038803816, z: 0}
+    m_Extent: {x: 0.2647375, y: 0.9099805, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
