@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: GameplaySmogCloudConfig
   m_EditorClassIdentifier: 
   MinBranchesForSmog: 3
-  MinWaitingTime: 1.5
-  MaxWaitingTime: 2.5
-  MinMovingTime: 2.5
-  MaxMovingTime: 15
+  MinWaitingTime: 8
+  MaxWaitingTime: 9
+  MinMovingTime: 8
+  MaxMovingTime: 9
   LeftPosition: {x: -9, y: 7, z: 0}
   RightPosition: {x: 12, y: 7, z: 0}
   WaitingPosition: {x: -1000, y: 7, z: 0}

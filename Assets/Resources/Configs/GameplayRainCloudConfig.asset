@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MinWaitingTime: 1.5
   MaxWaitingTime: 2.5
-  MinMovingTime: 2.5
-  MaxMovingTime: 7.5
+  MinMovingTime: 5
+  MaxMovingTime: 7
   LeftPosition: {x: -9, y: 7, z: 0}
   RightPosition: {x: 12, y: 7, z: 0}
   WaitingPosition: {x: -1000, y: 7, z: 0}
