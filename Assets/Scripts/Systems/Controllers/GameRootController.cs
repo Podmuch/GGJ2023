@@ -6,9 +6,9 @@ namespace BoxColliders.Game
     public sealed class GameRootController : MonoBehaviour
     {
         [SerializeField]
-        private List<Transform> rootsSlots;
+        private List<SlotData> rootsSlots;
 
-        public List<Transform> GetRootSlots()
+        public List<SlotData> GetRootSlots()
         {
             return rootsSlots;
         }

@@ -20,6 +20,8 @@ namespace BoxColliders.Game
             Add(new GameSunProductionSystem(eventBus, diContainer, diContext));
             Add(new GameStartSunReactSystem(eventBus, diContainer, diContext));
             Add(new GameSunSystem(eventBus, diContainer, diContext));
+            Add(new GameEnergyProductionSystem(eventBus, diContainer, diContext));
+            Add(new GameTreeGrowSystem(eventBus, diContainer, diContext));
 
             Add(new GameClearDiContainerSystem(eventBus, diContainer, diContext));
         }
