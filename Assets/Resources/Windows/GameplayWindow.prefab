@@ -179,7 +179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: 34fdb2ab4c2cc0b4fa16d17aa8efee4a, type: 2}
-  m_Color: {r: 0.7830189, g: 0.7830189, b: 0.7830189, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -340,7 +340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   view:
     canvasGroup: {fileID: 4735095413696632244}
-    waterProgressBar: {fileID: 4277852217067838591}
+    waterProgressBar: {fileID: 6786636013914903643}
     sunProgressBar: {fileID: 5942241363054921255}
     airProgressBar: {fileID: 4608803091420261538}
 --- !u!1 &4676510796534765425
@@ -454,8 +454,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -100}
-  m_SizeDelta: {x: 0, y: 100}
+  m_AnchoredPosition: {x: 0, y: -75.00003}
+  m_SizeDelta: {x: 0, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6404044350446710552
 CanvasRenderer:
@@ -487,8 +487,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Tree Simulator
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ebc6751b2dc844a5ea2322722301bb96, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: ebc6751b2dc844a5ea2322722301bb96, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -512,10 +512,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
-  m_fontSizeBase: 36
+  m_fontSize: 102
+  m_fontSizeBase: 102
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -660,8 +660,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: EXIT
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ebc6751b2dc844a5ea2322722301bb96, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: ebc6751b2dc844a5ea2322722301bb96, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -834,6 +834,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3793389558811723388, guid: 4ae0b137d9bff4b0987b8c10d2592b3f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8446827819299245122, guid: 4ae0b137d9bff4b0987b8c10d2592b3f, type: 3}
       propertyPath: m_TargetGraphic
       value: 
@@ -989,53 +993,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8446827819299245122, guid: 4ae0b137d9bff4b0987b8c10d2592b3f, type: 3}
-      propertyPath: m_TargetGraphic
-      value: 
+    - target: {fileID: 3793389558811723388, guid: 4ae0b137d9bff4b0987b8c10d2592b3f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ae0b137d9bff4b0987b8c10d2592b3f, type: 3}
---- !u!114 &1173798707033752678 stripped
+--- !u!114 &6786636013914903643 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8446827819299245122, guid: 4ae0b137d9bff4b0987b8c10d2592b3f, type: 3}
+  m_CorrespondingSourceObject: {fileID: 4277852217067838591, guid: 4ae0b137d9bff4b0987b8c10d2592b3f, type: 3}
   m_PrefabInstance: {fileID: 7310189448299759652}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &7627619263263147213 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 912469155969322217, guid: 4ae0b137d9bff4b0987b8c10d2592b3f, type: 3}
-  m_PrefabInstance: {fileID: 7310189448299759652}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &7839876033305743846 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 702516622870370754, guid: 4ae0b137d9bff4b0987b8c10d2592b3f, type: 3}
-  m_PrefabInstance: {fileID: 7310189448299759652}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &4277852217067838591
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7839876033305743846}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8517d3b7a70549748e6d1b2de164c9c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iconImage: {fileID: 7627619263263147213}
-  progressBar: {fileID: 1173798707033752678}
 --- !u!224 &8193782915573934487 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1496647206001025459, guid: 4ae0b137d9bff4b0987b8c10d2592b3f, type: 3}
@@ -1147,6 +1121,10 @@ PrefabInstance:
     - target: {fileID: 1496647206001025459, guid: 4ae0b137d9bff4b0987b8c10d2592b3f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3793389558811723388, guid: 4ae0b137d9bff4b0987b8c10d2592b3f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8446827819299245122, guid: 4ae0b137d9bff4b0987b8c10d2592b3f, type: 3}
       propertyPath: m_TargetGraphic

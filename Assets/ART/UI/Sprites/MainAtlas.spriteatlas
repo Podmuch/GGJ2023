@@ -52,11 +52,15 @@ SpriteAtlas:
   m_PackedSprites:
   - {fileID: 21300000, guid: 65313b83ce796e2499fa7cc0e380dae8, type: 3}
   - {fileID: 21300000, guid: 369a8525a308d11488f7240b247f8a93, type: 3}
+  - {fileID: 21300000, guid: 02e06adcbc243934f90141910603a0da, type: 3}
   - {fileID: 21300000, guid: 1badd64d57d2449a0953d7decc2f2df8, type: 3}
+  - {fileID: 21300000, guid: 512f816d5bc0e2b4ca51a550fc13a090, type: 3}
   m_PackedSpriteNamesToIndex:
   - MenuBackground
   - waiting_arrows
+  - Bar_Yellow
   - BoxCollidersLogo
+  - BarContainer
   m_RenderDataMap: {}
   m_Tag: MainAtlas
   m_IsVariant: 0
