@@ -168,8 +168,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   branchSlots:
-  - Transform: {fileID: 0}
-  - Transform: {fileID: 0}
+  - Transform: {fileID: 6861182925364859035}
+  - Transform: {fileID: 3070478357800196044}
   stateIcon: {fileID: 135884458996909196}
   indicatorParent: {fileID: 3110574441787022924}
   stateData:
