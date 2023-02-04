@@ -55,9 +55,15 @@ namespace BoxColliders.Windows
 
         public void UpdateView()
         {
-            waterProgressBar.SetValue(treeStateData.CurrentWater / gameplayConfig.MaxWaterCapacity);
-            sunProgressBar.SetValue(treeStateData.CurrentSun / gameplayConfig.MaxSunCapacity);
-            airProgressBar.SetValue(treeStateData.CurrentAir / gameplayConfig.MaxAirCapacity);
+            waterProgressBar.SetBarValue(treeStateData.CurrentWater / gameplayConfig.MaxWaterCapacity);
+            waterProgressBar.SetTextValue(treeStateData.CurrentWater);
+            
+            sunProgressBar.SetBarValue(treeStateData.CurrentSun / gameplayConfig.MaxSunCapacity);
+            sunProgressBar.SetTextValue(treeStateData.CurrentSun);
+            
+            airProgressBar.SetBarValue(treeStateData.CurrentAir / gameplayConfig.MaxAirCapacity);
+            airProgressBar.SetTextValue(treeStateData.CurrentAir);
+            
             energyFulfillImage.fillAmount = Mathf.Clamp01((float)treeStateData.Energy / (float)gameplayConfig.EnergyForGrow);
         }
     }
