@@ -15,7 +15,7 @@ MonoBehaviour:
   MaxWaterCapacity: 25
   BranchWaterProduction: 10
   WaterToEnergyConversion: 7
-  MaxSunCapacity: 300
+  MaxSunCapacity: 150
   BranchSunProduction: 50
   SunToEnergyConversion: 30
   MaxAirCapacity: 35
@@ -24,6 +24,6 @@ MonoBehaviour:
   EnergyProductionInterval: 0.03
   EnergyForGrow: 5
   ElementsCount: 2
-  TreePosition: {x: 3, y: 0, z: 0}
+  TreePosition: {x: 5, y: 0, z: 0}
   GroundLevel: 0
   ElementSize: 1
