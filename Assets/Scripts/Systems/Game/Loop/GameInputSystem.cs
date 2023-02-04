@@ -17,6 +17,8 @@ namespace BoxColliders.Game
 
         private IDIContainer diContainer;
         private object diContext;
+
+        private bool axisPressed = false;
         
         public GameInputSystem(IEventBus eventBus, IDIContainer diContainer, object diContext)
         {
@@ -39,8 +41,9 @@ namespace BoxColliders.Game
             var currentBranch = branchesList.Branches[branchIndicatorData.CurrentBranchIndex];
             var madeMove = false;
             
-            if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
+            if (Input.GetAxis("Horizontal") == -1f && !axisPressed)
             {
+                axisPressed = true;
                 branchIndicatorData.CurrentBranchIndex -= 1;
                 
                 if (branchIndicatorData.CurrentBranchIndex <= -1)
@@ -48,8 +51,9 @@ namespace BoxColliders.Game
 
                 madeMove = true;
             }
-            else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+            else if (Input.GetAxis("Horizontal") == 1f && !axisPressed)
             {
+                axisPressed = true;
                 branchIndicatorData.CurrentBranchIndex += 1;
                 
                 if (branchIndicatorData.CurrentBranchIndex > branchesLastIndex)
@@ -58,9 +62,14 @@ namespace BoxColliders.Game
                 madeMove = true;
             }
 
-            else if (Input.GetKeyDown(KeyCode.Space))
+            else if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Fire3"))
             {
                 currentBranch.SetNextState();
+            }
+
+            else if (Mathf.Abs(Input.GetAxis("Horizontal")) <1f && axisPressed )
+            {
+                axisPressed=!axisPressed;
             }
             
             if (!madeMove) return;
