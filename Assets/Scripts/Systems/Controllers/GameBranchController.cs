@@ -4,6 +4,7 @@ using BoxColliders.Configs;
 using PDGames.DIContainer;
 using PDGames.EventBus;
 using UnityEngine;
+using Utils;
 using Random = UnityEngine.Random;
 
 namespace BoxColliders.Game
@@ -47,7 +48,7 @@ namespace BoxColliders.Game
         
         public bool CanProduceWater()
         {
-            return stateData.State == BranchState.Water;
+            return stateData.State == BranchState.Water && stateData.IsTakingWater;
         }
 
         public float GetWaterProduction()
@@ -57,7 +58,7 @@ namespace BoxColliders.Game
 
         public bool CanProduceAir()
         {
-            return stateData.State == BranchState.Air;
+            return stateData.State == BranchState.Air && stateData.isTakingAir;
         }
 
         public float GetAirProduction()
@@ -67,7 +68,7 @@ namespace BoxColliders.Game
 
         public bool CanProduceSun()
         {
-            return stateData.State == BranchState.Sun;
+            return stateData.State == BranchState.Sun && stateData.IsTakingSun;
         }
 
         public float GetSunProduction()
@@ -78,6 +79,42 @@ namespace BoxColliders.Game
         public List<Transform> GetBranchSlots()
         {
             return branchSlots;
+        }
+        
+        void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.gameObject.CompareTag(DefinedStrings.Sun))
+            {
+                stateData.IsTakingSun = true;
+            }
+            
+            if (collision.gameObject.CompareTag(DefinedStrings.Rain))
+            {
+                stateData.IsTakingWater = true;
+            }
+            
+            if (collision.gameObject.CompareTag(DefinedStrings.Smog))
+            {
+                stateData.isTakingAir = false;
+            }
+        }
+        
+        void OnTriggerExit2D(Collider2D collision)
+        {
+            if (collision.gameObject.CompareTag(DefinedStrings.Sun))
+            {
+                stateData.IsTakingSun = false;
+            }
+            
+            if (collision.gameObject.CompareTag(DefinedStrings.Rain))
+            {
+                stateData.IsTakingWater = false;
+            }
+            
+            if (collision.gameObject.CompareTag(DefinedStrings.Smog))
+            {
+                stateData.isTakingAir = true;
+            }
         }
     }
 }
