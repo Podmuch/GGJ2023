@@ -79,6 +79,7 @@ namespace BoxColliders.Project
 
                 var branchInstance = GameObject.Instantiate<GameBranchController>(branchPrefab, branchSlot.Transform);
                 branchInstance.DisableStateIcon();
+                branchInstance.ForceAnimationState("Idle");
                 ResetTransform(branchInstance.transform);
                 AddEmptyBranchSlots(branchSlots, branchInstance);
             }
