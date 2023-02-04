@@ -37,6 +37,7 @@ namespace BoxColliders.Game
             
             diContainer.Fetch(this, diContext);
             stateData.State = (BranchState)Random.Range(0, Enum.GetNames(typeof(BranchState)).Length);
+            stateData.isTakingAir = true;
             
             stateIcon.gameObject.SetActive(true);
             stateIcon.sprite = resourcesConfig.GetStateIcon(stateData.State);
