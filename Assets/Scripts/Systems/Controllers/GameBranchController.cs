@@ -20,6 +20,8 @@ namespace BoxColliders.Game
         private SpriteRenderer stateIcon;
         [SerializeField] 
         public Transform indicatorParent;
+        [SerializeField] 
+        private Animator animator;
         
         [DIInject]
         private GameplayConfig gameplayConfig;
@@ -44,6 +46,13 @@ namespace BoxColliders.Game
 
             SetData(randomState);
             stateData.isTakingAir = true;
+            ForceAnimationState("Idle");
+        }
+
+        public void ForceAnimationState(string animName)
+        {
+            if (animator == null) animator = GetComponent<Animator>();
+            animator.Play(animName);
         }
 
         public void SetNextState()
@@ -71,6 +80,18 @@ namespace BoxColliders.Game
         public Transform GetStatsIconTransform()
         {
             return stateIcon.transform;
+        }
+
+        public void HighlightStatIcon()
+        {
+            stateIcon.sortingOrder = 22;
+            stateIcon.transform.localScale = Vector3.one * 1.5f;
+        }
+
+        public void UnhighlightStatIcon()
+        {
+            stateIcon.sortingOrder = 20;
+            stateIcon.transform.localScale = Vector3.one;
         }
         
         public bool CanProduceWater()
