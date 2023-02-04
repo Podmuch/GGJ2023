@@ -67,6 +67,11 @@ namespace BoxColliders.Game
         {
             stateIcon.gameObject.SetActive(false);
         }
+
+        public Transform GetStatsIconTransform()
+        {
+            return stateIcon.transform;
+        }
         
         public bool CanProduceWater()
         {

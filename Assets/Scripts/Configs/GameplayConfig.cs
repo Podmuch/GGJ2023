@@ -32,5 +32,7 @@ namespace BoxColliders.Configs
         
         [Header("Map")] 
         public Vector3 TreePosition;
+        public float GroundLevel;
+        public float ElementSize;
     }
 }

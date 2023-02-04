@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: GameplayRainCloudConfig
   m_EditorClassIdentifier: 
   MinWaitingTime: 2
-  MaxWaitingTime: 2.5
-  MinMovingTime: 4
-  MaxMovingTime: 5
+  MaxWaitingTime: 5
+  MinMovingTime: 5
+  MaxMovingTime: 15
   LeftPosition: {x: -5, y: 7, z: 0}
   RightPosition: {x: 11, y: 7, z: 0}
   WaitingPosition: {x: -1000, y: 7, z: 0}
