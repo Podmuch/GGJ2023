@@ -6,17 +6,17 @@ namespace BoxColliders.Game
     public sealed class GameTreeController : MonoBehaviour
     {
         [SerializeField] 
-        private List<Transform> branchSlots;
+        private List<SlotData> branchSlots;
         
         [SerializeField] 
-        private List<Transform> rootSlots;
+        private List<SlotData> rootSlots;
 
-        public List<Transform> GetBranchSlots()
+        public List<SlotData> GetBranchSlots()
         {
             return branchSlots;
         }
 
-        public List<Transform> GetRootSlots()
+        public List<SlotData> GetRootSlots()
         {
             return rootSlots;
         }

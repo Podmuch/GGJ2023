@@ -14,13 +14,14 @@ namespace BoxColliders.Game
         private GameResourcesConfig resourcesConfig;
         
         [SerializeField] 
-        private List<Transform> branchSlots;
+        private List<SlotData> branchSlots;
         [SerializeField] 
         private SpriteRenderer stateIcon;
         
         [DIInject]
         private GameplayConfig gameplayConfig;
         
+        [SerializeField]
         private GameBranchStateData stateData = new GameBranchStateData();
 
         private IEventBus eventBus;
@@ -75,7 +76,7 @@ namespace BoxColliders.Game
             return gameplayConfig.BranchSunProduction * Time.deltaTime;
         }
         
-        public List<Transform> GetBranchSlots()
+        public List<SlotData> GetBranchSlots()
         {
             return branchSlots;
         }

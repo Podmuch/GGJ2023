@@ -23,6 +23,10 @@ namespace BoxColliders.Configs
         public float BranchAirProduction;
         public float AirToEnergyConversion;
 
+        [Header("Growing")] 
+        public float EnergyProductionInterval;
+        public int EnergyForGrow;
+        
         [Header("Starting Params")] 
         public int ElementsCount;
         

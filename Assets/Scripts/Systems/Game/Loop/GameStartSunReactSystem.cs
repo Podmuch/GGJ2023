@@ -35,6 +35,10 @@ namespace BoxColliders.Game
         
         protected override void Execute(List<StartSunEvent> events)
         {
+            for (int i = 0; i < events.Count; i++)
+            {
+                events[i].IsDestroyed = true;
+            }
             sunData.currentSunPath = sunConfig.sunPaths[Random.Range(0, sunConfig.sunPaths.Count)];
             sunData.isMoving = true;
         }

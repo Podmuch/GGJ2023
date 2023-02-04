@@ -6,6 +6,7 @@ namespace BoxColliders.Game
         public float CurrentSun;
         public float CurrentAir;
 
-        public float Health;
+        public int Energy;
+        public float EnergyTimer;
     }
 }

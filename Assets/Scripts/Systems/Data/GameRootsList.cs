@@ -2,10 +2,10 @@ using System.Collections.Generic;
 
 namespace BoxColliders.Game
 {
-    public class GameBranchesList
+    public class GameRootsList
     {
-        public List<GameBranchController> Branches = new List<GameBranchController>();
-
+        public List<GameRootController> Roots = new List<GameRootController>();
+        
         public List<SlotData> EmptySlots = new List<SlotData>();
     }
 }

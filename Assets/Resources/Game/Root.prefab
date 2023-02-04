@@ -226,5 +226,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rootsSlots:
-  - {fileID: 8132221693252620625}
-  - {fileID: 6959408663981034196}
+  - Transform: {fileID: 8132221693252620625}
+  - Transform: {fileID: 6959408663981034196}

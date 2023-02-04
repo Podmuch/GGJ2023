@@ -166,8 +166,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   branchSlots:
-  - {fileID: 6861182925364859035}
-  - {fileID: 3070478357800196044}
+  - Transform: {fileID: 6861182925364859035}
+  - Transform: {fileID: 3070478357800196044}
   stateIcon: {fileID: 135884458996909196}
 --- !u!1 &3110574441787022925
 GameObject:
