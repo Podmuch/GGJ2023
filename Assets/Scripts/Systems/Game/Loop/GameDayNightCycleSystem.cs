@@ -12,6 +12,7 @@ namespace BoxColliders.Game
         [DIInject] private GameplayStateData stateData = default;
         [DIInject] private GameplayDayNightCycleData dayNightCycleData = default;
         [DIInject] private GameplayDayNightCycleConfig dayNightCycleConfig = default;
+        [DIInject] private BackgroundSkyController backgroundController = default;
 
         private IDIContainer diContainer;
         private object diContext;
@@ -40,9 +41,12 @@ namespace BoxColliders.Game
                 var randomMinMaxTime = dayNightCycleData.isDay
                     ? dayNightCycleConfig.minMaxDayTime
                     : dayNightCycleConfig.minMaxNightTime;
+                
                 dayNightCycleData.endCycleTime = Random.Range(randomMinMaxTime.x, randomMinMaxTime.y);
                 if(dayNightCycleData.isDay) ProjectEventBus.Instance.Fire<SetNewSunDataEvent>();
                 dayNightCycleData.currentCycleTime = 0f;
+                
+                backgroundController.SetAnimatorBool(dayNightCycleData.isDay);
             }
         }
     }
