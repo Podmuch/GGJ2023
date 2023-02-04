@@ -187,7 +187,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 65313b83ce796e2499fa7cc0e380dae8, type: 3}
-  m_Type: 0
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -743,6 +743,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnergyPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 3433402565084562936, guid: 7400ba2b0470340f1b4702990b9ead8d, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -80
+      objectReference: {fileID: 0}
+    - target: {fileID: 3433402565084562936, guid: 7400ba2b0470340f1b4702990b9ead8d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 6035342050502099027, guid: 7400ba2b0470340f1b4702990b9ead8d, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -79.99995
+      objectReference: {fileID: 0}
+    - target: {fileID: 6035342050502099027, guid: 7400ba2b0470340f1b4702990b9ead8d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 40.000027
+      objectReference: {fileID: 0}
     - target: {fileID: 8272244693417978591, guid: 7400ba2b0470340f1b4702990b9ead8d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1006,6 +1022,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4671789709805594481}
     m_Modifications:
+    - target: {fileID: 2674593969575427501, guid: 7bf68db7aaeec42f691395a592453c25, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: eca5bc74d949a9f4ba52b87a9e1bb9b9, type: 3}
     - target: {fileID: 2731693375677782885, guid: 7bf68db7aaeec42f691395a592453c25, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1223,6 +1243,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3884805266153962584, guid: 5e528b1ae65bf44589a5f5a7bc6a9079, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ee859b6a3c457b040bce15e305ab524e, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e528b1ae65bf44589a5f5a7bc6a9079, type: 3}
 --- !u!224 &4839094380696642574 stripped

@@ -9,7 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: LiberationSans SDF Material
   m_Shader: {fileID: 4800000, guid: fe393ace9b354375a9cb14cdbbc28be4, type: 3}
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - OUTLINE_ON
   m_InvalidKeywords: []
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
@@ -75,9 +76,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: EnchantedLand
   m_EditorClassIdentifier: 
-  hashCode: 95144221
+  hashCode: -859431779
   material: {fileID: 2180264}
-  materialHashCode: -966765411
+  materialHashCode: -602589155
   m_Version: 1.1.0
   m_SourceFontFileGUID: 73ff3fba67983ee4ebf56b2a6d37b12a
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 73ff3fba67983ee4ebf56b2a6d37b12a, type: 3}
