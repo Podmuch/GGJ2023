@@ -26,6 +26,10 @@ namespace BoxColliders.Configs
         [Header("Growing")] 
         public float EnergyProductionInterval;
         public int EnergyForGrow;
+
+        [Header("Smog")] 
+        public float MaxBranchHealth;
+        public float SmogHealthConsumption;
         
         [Header("Starting Params")] 
         public int ElementsCount;

@@ -31,9 +31,11 @@ namespace BoxColliders.Game
 
         public void Execute()
         {
-            if (!stateData.IsStarted) return;
+            if (!stateData.IsStarted || branchesList.Branches.Count <= 0) return;
 
             var branchesLastIndex = branchesList.Branches.Count - 1;
+            
+            branchIndicatorData.CurrentBranchIndex = Mathf.Clamp(branchIndicatorData.CurrentBranchIndex, 0, branchesLastIndex);
             var currentBranch = branchesList.Branches[branchIndicatorData.CurrentBranchIndex];
             var madeMove = false;
             

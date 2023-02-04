@@ -9,5 +9,7 @@ namespace BoxColliders.Game
         public Transform Transform;
         [NonSerialized]
         public bool IsEmpty = true;
+        [NonSerialized] 
+        public GameBranchController BranchController;
     }
 }

@@ -27,6 +27,7 @@ namespace BoxColliders.Game
             Add(new GameWaterProductionSystem(eventBus, diContainer, diContext));
             Add(new GameAirProductionSystem(eventBus, diContainer, diContext));
             Add(new GameSunProductionSystem(eventBus, diContainer, diContext));
+            Add(new GameHealthConsumptionSystem(eventBus, diContainer, diContext));
             Add(new GameSetNewSunDataReactSystem(eventBus, diContainer, diContext));
             Add(new GameSunSystem(eventBus, diContainer, diContext));
             Add(new GameRainCloudSystem(eventBus, diContainer, diContext));

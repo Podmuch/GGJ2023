@@ -13,6 +13,10 @@ namespace BoxColliders.Game
     {
         [DIInject] 
         private GameResourcesConfig resourcesConfig;
+        [DIInject] 
+        private GameplayConfig gameplayConfig;
+        [DIInject] 
+        private GameBranchesList gameBranchesList;
         
         [SerializeField] 
         private List<SlotData> branchSlots;
@@ -22,10 +26,7 @@ namespace BoxColliders.Game
         public Transform indicatorParent;
         [SerializeField] 
         private Animator animator;
-        
-        [DIInject]
-        private GameplayConfig gameplayConfig;
-        
+
         private GameBranchStateData stateData = new GameBranchStateData();
         
         private IEventBus eventBus;
@@ -33,19 +34,24 @@ namespace BoxColliders.Game
         private object diContext;
         
         private int stateEnumLength;
+        private SlotData parentSlot;
         
-        public void Initialize(IEventBus eventBus, IDIContainer diContainer, object diContext, bool newBranch = false)
+        public void Initialize(IEventBus eventBus, IDIContainer diContainer, object diContext, SlotData slot, bool newBranch = false)
         {
             this.eventBus = eventBus;
             this.diContainer = diContainer;
             this.diContext = diContext;
+
+            parentSlot = slot;
+            parentSlot.BranchController = this;
             
             diContainer.Fetch(this, diContext);
             stateEnumLength = Enum.GetNames(typeof(BranchState)).Length;
             var randomState = (BranchState)Random.Range(0, stateEnumLength);
 
+            stateData.Health = gameplayConfig.MaxBranchHealth;
             SetData(randomState);
-            stateData.isTakingAir = true;
+            stateData.IsTakingAir = true;
             if (!newBranch) ForceAnimationState("Idle");
             else StartGrowAnimation();
         }
@@ -60,6 +66,12 @@ namespace BoxColliders.Game
         {
             if (animator == null) animator = GetComponent<Animator>();
             animator.SetTrigger("Grow");
+        }
+
+        public void StartPoisonedAnimation()
+        {
+            if (animator == null) animator = GetComponent<Animator>();
+            animator.SetTrigger("Poison");
         }
 
         public void SetNextState()
@@ -113,7 +125,7 @@ namespace BoxColliders.Game
 
         public bool CanProduceAir()
         {
-            return stateData.State == BranchState.Air && stateData.isTakingAir;
+            return stateData.State == BranchState.Air && stateData.IsTakingAir;
         }
 
         public float GetAirProduction()
@@ -129,6 +141,44 @@ namespace BoxColliders.Game
         public float GetSunProduction()
         {
             return gameplayConfig.BranchSunProduction * Time.deltaTime;
+        }
+
+        public bool CanConsumeHealth()
+        {
+            return stateData.State != BranchState.InActive && stateData.IsInSmog;
+        }
+
+        public void ConsumeHealth()
+        {
+            var empty = true;
+            for (int i = 0; i < branchSlots.Count; i++)
+            {
+                if (!branchSlots[i].IsEmpty)
+                {
+                    empty = false;
+                    branchSlots[i].BranchController.ConsumeHealth();
+                    break;
+                }
+            }
+
+            if (empty)
+            {
+                Debug.LogError("stateData.Health=" + stateData.Health);
+                stateData.Health -= gameplayConfig.SmogHealthConsumption * Time.deltaTime;
+                if (stateData.Health < 0)
+                {
+                    StartPoisonedAnimation();
+                    DisableStateIcon();
+                    parentSlot.IsEmpty = true;
+                    parentSlot.BranchController = null;
+                    gameBranchesList.EmptySlots.Add(parentSlot);
+                    gameBranchesList.Branches.Remove(this);
+                    for (int i = 0; i < branchSlots.Count; i++)
+                    {
+                        gameBranchesList.EmptySlots.Remove(branchSlots[i]);
+                    }
+                }
+            }
         }
         
         public List<SlotData> GetBranchSlots()
@@ -150,7 +200,7 @@ namespace BoxColliders.Game
             
             if (collision.gameObject.CompareTag(DefinedStrings.Smog))
             {
-                stateData.isTakingAir = false;
+                stateData.IsInSmog = true;
             }
         }
         
@@ -168,7 +218,7 @@ namespace BoxColliders.Game
             
             if (collision.gameObject.CompareTag(DefinedStrings.Smog))
             {
-                stateData.isTakingAir = true;
+                stateData.IsInSmog = false;
             }
         }
     }
