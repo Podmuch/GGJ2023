@@ -8,11 +8,14 @@ namespace BoxColliders.Project
 {
     public sealed class TransitionInitializeAudioControllerStep : LoaderStep
     {
+        [DIInject] 
+        private AudioController audioController;
         private IDIContainer diContainer;
 
         public TransitionInitializeAudioControllerStep(IEventBus eventBus, IDIContainer diContainer) : base(eventBus)
         {
             this.diContainer = diContainer;
+            diContainer.Fetch(this);
         }
 
         public override bool IsReady()
@@ -34,6 +37,8 @@ namespace BoxColliders.Project
         {
             var audioController = GameObject.FindObjectOfType<AudioController>();
             diContainer.Register(audioController);
+
+            audioController.PlayAudio(DefinedAudioKeys.themeSong, 0f, true);
         }
     }
 }

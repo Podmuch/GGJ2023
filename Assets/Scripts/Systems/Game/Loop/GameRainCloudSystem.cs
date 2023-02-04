@@ -66,7 +66,7 @@ namespace BoxColliders.Game
             rainCloudData.MovingTimer = 0;
             rainCloudData.MovementDuration = Random.Range(rainCloudConfig.MinMovingTime, rainCloudConfig.MaxMovingTime);
             
-            rainAudio = audioController.PlayAudio(DefinedAudioKeys.enviroRain, 0f, true, rainCloudData.MovementDuration);
+            rainAudio = audioController.PlayAudio(DefinedAudioKeys.enviroRain, 0f, true);
 
             bool startFromLeft = Random.Range(0.0f, 1.0f) > 0.5f;
             if (startFromLeft)

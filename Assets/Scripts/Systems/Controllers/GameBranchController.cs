@@ -12,7 +12,9 @@ namespace BoxColliders.Game
     public sealed class GameBranchController : MonoBehaviour
     {
         [DIInject] 
-        private GameResourcesConfig resourcesConfig;
+        private GameResourcesConfig resourcesConfig = default;
+        [DIInject] 
+        private AudioController audioController = default;
         
         [SerializeField] 
         private List<SlotData> branchSlots;
@@ -46,7 +48,7 @@ namespace BoxColliders.Game
 
             SetData(randomState);
             stateData.isTakingAir = true;
-            if (!newBranch) ForceAnimationState("Idle");
+            if (!newBranch) {ForceAnimationState("Idle");}
             else StartGrowAnimation();
         }
 
@@ -69,6 +71,8 @@ namespace BoxColliders.Game
             if (nextState >= stateEnumLength)
                 nextState = 0;
             SetData((BranchState) nextState);
+
+            audioController.PlayAudio(GetAudioOfState((BranchState) nextState));
         }
         
         public void SetData(BranchState branchState)
@@ -170,6 +174,23 @@ namespace BoxColliders.Game
             {
                 stateData.isTakingAir = true;
             }
+        }
+
+        public string GetAudioOfState(BranchState branchState)
+        {
+            switch (branchState)
+            {
+                case BranchState.InActive:
+                    return DefinedAudioKeys.modeOff;
+                case BranchState.Water:
+                    return DefinedAudioKeys.modeWater;
+                case BranchState.Sun:
+                    return DefinedAudioKeys.modeSun;
+                case BranchState.Air:
+                    return DefinedAudioKeys.modeAir;
+            }
+
+            return null;
         }
     }
 }

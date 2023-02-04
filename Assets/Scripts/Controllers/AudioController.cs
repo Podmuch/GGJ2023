@@ -41,7 +41,7 @@ public class AudioController : MonoBehaviour
     
     #endregion
 
-    public AudioSource PlayAudio(string key, float delay = 0f, bool looped = false, float loopTime = 5)
+    public AudioSource PlayAudio(string key, float delay = 0f, bool looped = false)
     {
         if(audioConfig == null) audioConfig = ProjectDIContainer.Instance.GetReference<AudioConfig>(null);
         
