@@ -22,5 +22,8 @@ namespace BoxColliders.Configs
         public float MaxAirCapacity;
         public float BranchAirProduction;
         public float AirToEnergyConversion;
+
+        [Header("Map")] 
+        public Vector3 TreePosition;
     }
 }

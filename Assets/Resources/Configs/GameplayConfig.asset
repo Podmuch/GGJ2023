@@ -21,3 +21,4 @@ MonoBehaviour:
   MaxAirCapacity: 100
   BranchAirProduction: 50
   AirToEnergyConversion: 25
+  TreePosition: {x: 3, y: 0, z: 0}

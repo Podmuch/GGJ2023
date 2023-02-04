@@ -11,6 +11,7 @@ namespace BoxColliders.Project
             Add(new ConfigInitializeGameplayConfigSystem(eventBus, diContainer));
             Add(new ConfigInitializeArenasConfigSystem(eventBus, diContainer));
             Add(new ConfigInitializeSunConfigSystem(eventBus, diContainer));
+            Add(new ConfigInitializeResourcesConfigSystem(eventBus, diContainer));
         }
     }
 }

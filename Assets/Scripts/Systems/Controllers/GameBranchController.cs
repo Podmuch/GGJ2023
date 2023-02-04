@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using BoxColliders.Configs;
 using PDGames.DIContainer;
 using PDGames.EventBus;
@@ -7,7 +8,10 @@ namespace BoxColliders.Game
 {
     public sealed class GameBranchController : MonoBehaviour
     {
-        [DIInject] 
+        [SerializeField] 
+        private List<Transform> branchSlots;
+        
+        [DIInject]
         private GameplayConfig gameplayConfig;
         
         private GameBranchStateData stateData = new GameBranchStateData();
@@ -53,6 +57,11 @@ namespace BoxColliders.Game
         public float GetSunProduction()
         {
             return gameplayConfig.BranchSunProduction * Time.deltaTime;
+        }
+        
+        public List<Transform> GetBranchSlots()
+        {
+            return branchSlots;
         }
     }
 }
