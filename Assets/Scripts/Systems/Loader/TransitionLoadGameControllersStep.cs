@@ -105,8 +105,7 @@ namespace BoxColliders.Project
                 var branchInstance = GameObject.Instantiate<GameBranchController>(branchPrefab, branchSlot.Transform);
                 branchInstance.Initialize(eventBus, diContainer, diContext);
                 ResetTransform(branchInstance.transform);
-                gameBranchesList.EmptySlots.AddRange(branchInstance.GetBranchSlots());
-                gameBranchesList.Branches.Add(branchInstance);
+                AddBranchToList(gameBranchesList, branchInstance);
             }
         }
 
@@ -127,8 +126,7 @@ namespace BoxColliders.Project
 
                 var rootInstance = GameObject.Instantiate<GameRootController>(rootPrefab, rootSlot.Transform);
                 ResetTransform(rootInstance.transform);
-                gameRootsList.EmptySlots.AddRange(rootInstance.GetRootSlots());
-                gameRootsList.Roots.Add(rootInstance);
+                AddRootToList(gameRootsList, rootInstance);
             }
         }
 
@@ -159,6 +157,52 @@ namespace BoxColliders.Project
             var branchIndicator = Resources.Load<BranchIndicator>(resourcesConfig.BranchIndicatorPrefabPath);
             var branchIndicatorController = GameObject.Instantiate(branchIndicator);
             diContainer.Register(branchIndicatorController, diContext);
+        }
+
+        private void AddBranchToList(GameBranchesList gameBranchesList, GameBranchController branchInstance)
+        {
+            bool added = false;
+            for (int i = 0; !added && i < gameBranchesList.Branches.Count; i++)
+            {
+                if (gameBranchesList.Branches[i].GetStatsIconTransform().position.x > branchInstance.GetStatsIconTransform().position.x)
+                {
+                    gameBranchesList.Branches.Insert(i, branchInstance);
+                    added = true;
+                }
+            }
+            if (!added) gameBranchesList.Branches.Add(branchInstance);
+
+            var emptySlots = branchInstance.GetBranchSlots();
+            for (int i = 0; i < emptySlots.Count; i++)
+            {
+                if (emptySlots[i].Transform.position.y - gameplayConfig.ElementSize > gameplayConfig.GroundLevel)
+                {
+                    gameBranchesList.EmptySlots.Add(emptySlots[i]);
+                }
+            }
+        }
+
+        private void AddRootToList(GameRootsList gameRootsList, GameRootController rootInstance)
+        {
+            bool added = false;
+            for (int i = 0; !added && i < gameRootsList.Roots.Count; i++)
+            {
+                if (gameRootsList.Roots[i].transform.position.x > rootInstance.transform.position.x)
+                {
+                    gameRootsList.Roots.Insert(i, rootInstance);
+                    added = true;
+                }
+            }
+            if (!added) gameRootsList.Roots.Add(rootInstance);
+
+            var emptySlots = rootInstance.GetRootSlots();
+            for (int i = 0; i < emptySlots.Count; i++)
+            {
+                if (emptySlots[i].Transform.position.y + gameplayConfig.ElementSize < gameplayConfig.GroundLevel)
+                {
+                    gameRootsList.EmptySlots.Add(emptySlots[i]);
+                }
+            }
         }
     }
 }
