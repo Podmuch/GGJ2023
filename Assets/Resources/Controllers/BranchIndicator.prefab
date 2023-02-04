@@ -42,6 +42,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4549383298084555440}
   - component: {fileID: 8191658902841251096}
+  - component: {fileID: 2879475832065444975}
   m_Layer: 0
   m_Name: BranchIndicator
   m_TagString: Sun
@@ -79,6 +80,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   indicatorParent: {fileID: 8524919065230318585}
   indicatorSprite: {fileID: 4834803429634115443}
+--- !u!111 &2879475832065444975
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4024893348407474523}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 178c9e2e266674b9ea080dd6f52a978e, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 178c9e2e266674b9ea080dd6f52a978e, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &5665987478377881786
 GameObject:
   m_ObjectHideFlags: 0
@@ -105,7 +122,7 @@ Transform:
   m_GameObject: {fileID: 5665987478377881786}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8524919065230318585}
@@ -131,7 +148,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -152,8 +169,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 21
-  m_Sprite: {fileID: 21300000, guid: 369a8525a308d11488f7240b247f8a93, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: b6c70fb0a0fc64b41a3fb44a6361c879, type: 3}
+  m_Color: {r: 0, g: 0.057555437, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
