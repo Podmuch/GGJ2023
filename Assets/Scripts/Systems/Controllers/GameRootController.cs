@@ -7,10 +7,18 @@ namespace BoxColliders.Game
     {
         [SerializeField]
         private List<SlotData> rootsSlots;
+        [SerializeField] 
+        private Animator animator;
 
         public List<SlotData> GetRootSlots()
         {
             return rootsSlots;
+        }
+        
+        public void ForceAnimationState(string animName)
+        {
+            if (animator == null) animator = GetComponent<Animator>();
+            animator.Play(animName);
         }
     }
 }

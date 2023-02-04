@@ -111,6 +111,7 @@ namespace BoxColliders.Project
                 rootSlots.RemoveAt(rootSlotId);
 
                 var rootInstance = GameObject.Instantiate<GameRootController>(rootPrefab, rootSlot.Transform);
+                rootInstance.ForceAnimationState("Root_Idle");
                 ResetTransform(rootInstance.transform);
                 AddEmptyRootSlots(rootSlots, rootInstance);
             }
