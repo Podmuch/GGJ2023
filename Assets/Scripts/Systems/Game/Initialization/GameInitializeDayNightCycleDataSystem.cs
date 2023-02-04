@@ -1,21 +1,18 @@
-using System.Collections.Generic;
 using PDGames.DIContainer;
 using PDGames.EventBus;
 using PDGames.Systems;
-using PDGames.Systems.Loader;
 
 namespace BoxColliders.Game
 {
-    public sealed class GameInitializeSunSystem : IInitializeSystem
+    public sealed class GameInitializeDayNightCycleDataSystem : IInitializeSystem
     {
-        [DIInject] 
-        private GameplayStateData stateData = default;
-        
+        private IEventBus eventBus;
         private IDIContainer diContainer;
         private object diContext;
         
-        public GameInitializeSunSystem(IEventBus eventBus, IDIContainer diContainer, object diContext)
+        public GameInitializeDayNightCycleDataSystem(IEventBus eventBus, IDIContainer diContainer, object diContext)
         {
+            this.eventBus = eventBus;
             this.diContainer = diContainer;
             this.diContext = diContext;
         }
@@ -23,6 +20,8 @@ namespace BoxColliders.Game
         public void Initialize()
         {
             diContainer.Fetch(this, diContext);
+            var dayNightCycleData = new GameplayDayNightCycleData();
+            diContainer.Register(dayNightCycleData, diContext);
         }
     }
 }

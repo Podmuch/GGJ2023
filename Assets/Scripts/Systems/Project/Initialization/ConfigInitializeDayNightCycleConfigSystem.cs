@@ -7,11 +7,11 @@ using UnityEngine;
 
 namespace BoxColliders.Project
 {
-    public sealed class ConfigInitializeSunConfigSystem : ReactiveSystem<InitializeConfigurationEvent>, IInitializeSystem
+    public sealed class ConfigInitializeDayNightCycleConfigSystem : ReactiveSystem<InitializeConfigurationEvent>, IInitializeSystem
     {
         private IDIContainer diContainer;
         
-        public ConfigInitializeSunConfigSystem(IEventBus eventBus, IDIContainer diContainer) : base(eventBus)
+        public ConfigInitializeDayNightCycleConfigSystem(IEventBus eventBus, IDIContainer diContainer) : base(eventBus)
         {
             this.diContainer = diContainer;
         }
@@ -32,14 +32,14 @@ namespace BoxColliders.Project
 
         private void LoadConfig()
         {
-            var sunConfig = Resources.Load<GameplaySunConfig>(GameplaySunConfig.ResourcePath);
-            if (sunConfig == null)
+            var dayNightCycle = Resources.Load<GameplayDayNightCycleConfig>(GameplayDayNightCycleConfig.ResourcePath);
+            if (dayNightCycle == null)
             {
-                Debug.LogError("[Config] SunConfig not found at path: " + GameplaySunConfig.ResourcePath);
+                Debug.LogError("[Config] SunConfig not found at path: " + GameplayDayNightCycleConfig.ResourcePath);
             }
             else
             {
-                diContainer.Register(sunConfig);
+                diContainer.Register(dayNightCycle);
             }
         }
     }
