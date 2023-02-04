@@ -13,6 +13,7 @@ namespace BoxColliders.Game
             Add(new GameInitializeDayNightCycleDataSystem(eventBus, diContainer, diContext));
             Add(new GameInitializeGameplaySunDataSystem(eventBus, diContainer, diContext));
             Add(new GameInitializeRainCloudDataSystem(eventBus, diContainer, diContext));
+            Add(new GameInitializeSmogCloudDataSystem(eventBus, diContainer, diContext));
             Add(new GameInitializeBranchIndicatorDataSystem(eventBus, diContainer, diContext));
             
             Add(new GameDayNightCycleSystem(eventBus, diContainer, diContext));
@@ -29,6 +30,7 @@ namespace BoxColliders.Game
             Add(new GameSetNewSunDataReactSystem(eventBus, diContainer, diContext));
             Add(new GameSunSystem(eventBus, diContainer, diContext));
             Add(new GameRainCloudSystem(eventBus, diContainer, diContext));
+            Add(new GameSmogCloudSystem(eventBus, diContainer, diContext));
             Add(new GameEnergyProductionSystem(eventBus, diContainer, diContext));
             Add(new GameTreeGrowSystem(eventBus, diContainer, diContext));
 

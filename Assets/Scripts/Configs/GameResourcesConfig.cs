@@ -22,6 +22,7 @@ namespace BoxColliders.Configs
         public string BranchIndicatorPrefabPath;
         public string SunPrefabPath;
         public string RainCloudPath;
+        public string SmogCloudPath;
         public string RootPrefabPath;
 
         [SerializeField]

@@ -17,6 +17,7 @@ MonoBehaviour:
   BranchIndicatorPrefabPath: Controllers/BranchIndicator
   SunPrefabPath: Controllers/SunController
   RainCloudPath: Controllers/RainCloud
+  SmogCloudPath: Controllers/Smog
   RootPrefabPath: Game/Root_D
   stateIcons:
   - State: 0

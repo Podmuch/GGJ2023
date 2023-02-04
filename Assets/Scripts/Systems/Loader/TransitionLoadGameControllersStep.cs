@@ -53,6 +53,7 @@ namespace BoxColliders.Project
             
             CreateSun(diContext);
             CreateCloudController(diContext);
+            CreateSmogController(diContext);
 
             CreateBranchIndicator(diContext);
             
@@ -151,6 +152,14 @@ namespace BoxColliders.Project
 
             var cloudInstance = GameObject.Instantiate<RainCloudController>(cloudPrefab);
             diContainer.Register(cloudInstance, diContext);
+        }
+
+        private void CreateSmogController(object diContext)
+        {
+            var smogPrefab = Resources.Load<SmogCloudController>(resourcesConfig.SmogCloudPath);
+
+            var smogInstance = GameObject.Instantiate<SmogCloudController>(smogPrefab);
+            diContainer.Register(smogInstance, diContext);
         }
         
         private void CreateBranchIndicator(object diContext)
