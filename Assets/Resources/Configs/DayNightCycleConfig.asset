@@ -18,30 +18,30 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0.0074310303
-        value: -4.9369507
-        inSlope: 29.312828
-        outSlope: 29.312828
+        value: -9.826294
+        inSlope: 42.59411
+        outSlope: 42.59411
         tangentMode: 0
         weightedMode: 0
         inWeight: 0
-        outWeight: 0.13881241
+        outWeight: 0.11594437
       - serializedVersion: 3
-        time: 0.6705385
-        value: 6.053325
-        inSlope: 7.9522367
-        outSlope: 7.9522367
+        time: 0.5087648
+        value: 5.186626
+        inSlope: 25.73376
+        outSlope: 25.73376
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.3772803
+        outWeight: 0.21175613
       - serializedVersion: 3
-        time: 1.4831085
-        value: 15.169708
-        inSlope: 3.4871783
-        outSlope: 3.4871783
+        time: 0.9855589
+        value: 19.725407
+        inSlope: 45.005054
+        outSlope: 45.005054
         tangentMode: 0
         weightedMode: 0
-        inWeight: 1
+        inWeight: 0.081135266
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -59,7 +59,7 @@ MonoBehaviour:
         inWeight: 0
         outWeight: 0.04276838
       - serializedVersion: 3
-        time: 0.5243171
+        time: 0.49868232
         value: 7.5720844
         inSlope: -0.009762335
         outSlope: -0.009762335
@@ -79,5 +79,5 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-  minMaxDayTime: {x: 20, y: 20}
-  minMaxNightTime: {x: 5, y: 5}
+  minMaxDayTime: {x: 10, y: 10}
+  minMaxNightTime: {x: 3, y: 3}

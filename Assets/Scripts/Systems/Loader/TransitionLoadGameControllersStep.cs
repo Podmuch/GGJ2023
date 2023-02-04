@@ -104,7 +104,7 @@ namespace BoxColliders.Project
                 gameBranchesList.EmptySlots.RemoveAt(branchSlotId);
 
                 var branchInstance = GameObject.Instantiate<GameBranchController>(branchPrefab, branchSlot.Transform);
-                branchInstance.Initialize(eventBus, diContainer, diContext);
+                branchInstance.Initialize(eventBus, diContainer, diContext, branchSlot);
                 ResetTransform(branchInstance.transform);
                 AddBranchToList(gameBranchesList, branchInstance);
             }

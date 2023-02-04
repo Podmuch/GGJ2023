@@ -10,6 +10,9 @@ namespace BoxColliders.Game
         
         public bool IsTakingWater;
         public bool IsTakingSun;
-        public bool isTakingAir;
+        public bool IsTakingAir;
+        public bool IsInSmog;
+
+        public float Health;
     }
 }

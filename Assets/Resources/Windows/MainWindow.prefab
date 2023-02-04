@@ -429,7 +429,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Tree Simulator
+  m_text: Dendrotopia
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ebc6751b2dc844a5ea2322722301bb96, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: ebc6751b2dc844a5ea2322722301bb96, type: 2}

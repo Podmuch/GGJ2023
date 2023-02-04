@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34e657c7f265148b89c6daf784d4a50a, type: 3}
+  m_Name: AudioConfig
+  m_EditorClassIdentifier: 
+  sounds:
+  - key: dayStartEnd
+    audioClip: {fileID: 8300000, guid: a77080a4cc67344ebbf1ea637cc11ab3, type: 3}
+  - key: enviroPoison
+    audioClip: {fileID: 8300000, guid: 408a4586486ea42d78e8e387b6112c57, type: 3}
+  - key: enviroRain
+    audioClip: {fileID: 8300000, guid: fa0cbee571ff14bd3a2125a678a1e4fa, type: 3}
+  - key: modeAir
+    audioClip: {fileID: 8300000, guid: ad5a0cf9cf12b4db6beda0e5ac2089a0, type: 3}
+  - key: modeOff
+    audioClip: {fileID: 8300000, guid: bc654e40c905e4cc3bcd35b0ec45dec9, type: 3}
+  - key: modeSun
+    audioClip: {fileID: 8300000, guid: dd43ce866ff5f41f59e3cbfb95939ad6, type: 3}
+  - key: modeWater
+    audioClip: {fileID: 8300000, guid: 95bf815c614814c6a8a60af05f3c9396, type: 3}
+  - key: switchBranch
+    audioClip: {fileID: 8300000, guid: 38ce2b889f2af465abd27575279649ef, type: 3}
+  - key: themeSong
+    audioClip: {fileID: 8300000, guid: 560192388d3f045ac858fe1c78e14e4d, type: 3}

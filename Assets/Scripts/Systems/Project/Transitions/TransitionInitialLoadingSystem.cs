@@ -41,6 +41,7 @@ namespace BoxColliders.Project
             loaderQueue.Steps.Add(new TransitionInitializeEventSystemStep(eventBus, diContainer));
             loaderQueue.Steps.Add(new TransitionLoadConfigurationStep(eventBus, diContainer));
             loaderQueue.Steps.Add(new TransitionInitializeMainCameraStep(eventBus, diContainer));
+            loaderQueue.Steps.Add(new TransitionInitializeAudioControllerStep(eventBus, diContainer));
             loaderQueue.Steps.Add(new TransitionLoadInitialBackgroundStep(eventBus, diContainer));
             loaderQueue.Steps.Add(new TransitionGenerateRandomTreeStep(eventBus, diContainer));
             loaderQueue.Steps.Add(new TransitionInitialLoadingEndStep(eventBus, diContainer));
