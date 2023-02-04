@@ -1200,7 +1200,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Root/Root_Base/1/2
+    path: Root/Root_Base/1
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -1210,7 +1210,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Root/Root_Base/1/2
+    path: Root/Root_Base/1
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -1220,7 +1220,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Root/Root_Base/1/2
+    path: Root/Root_Base/1
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -1230,7 +1230,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Root/Root_Base/1
+    path: Root/Root_Base/1/2
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -1240,7 +1240,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Root/Root_Base/1
+    path: Root/Root_Base/1/2
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -1250,7 +1250,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Root/Root_Base/1
+    path: Root/Root_Base/1/2
     classID: 4
     script: {fileID: 0}
   - curve:
