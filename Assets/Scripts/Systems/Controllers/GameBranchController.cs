@@ -40,6 +40,7 @@ namespace BoxColliders.Game
             
             stateIcon.gameObject.SetActive(true);
             stateIcon.sprite = resourcesConfig.GetStateIcon(stateData.State);
+            stateIcon.transform.rotation = Quaternion.identity;
         }
 
         public void DisableStateIcon()
