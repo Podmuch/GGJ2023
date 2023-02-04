@@ -189,8 +189,8 @@ MonoBehaviour:
   - {fileID: 8709054354265547263}
   - {fileID: 3847610803215213609}
   m_Bounds:
-    m_Center: {x: 0.21681564, y: -0.0025089383, z: 0}
-    m_Extent: {x: 0.27434015, y: 0.17771718, z: 0}
+    m_Center: {x: 0.21681574, y: -0.0025088787, z: 0}
+    m_Extent: {x: 0.27434027, y: 0.17771718, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -526,8 +526,8 @@ MonoBehaviour:
   - {fileID: 1174059108161635500}
   - {fileID: 8033966507124794527}
   m_Bounds:
-    m_Center: {x: 0.22546346, y: 0.009610742, z: 0}
-    m_Extent: {x: 0.27434024, y: 0.17771715, z: 0}
+    m_Center: {x: 0.2254636, y: 0.009610757, z: 0}
+    m_Extent: {x: 0.2743403, y: 0.17771718, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -982,8 +982,8 @@ MonoBehaviour:
   - {fileID: 6007280698796156112}
   - {fileID: 1664842349537590236}
   m_Bounds:
-    m_Center: {x: 0.26163545, y: -0.008710057, z: 0}
-    m_Extent: {x: 0.27434027, y: 0.17771718, z: 0}
+    m_Center: {x: 0.20752825, y: -0.038388208, z: 0}
+    m_Extent: {x: 0.22231866, y: 0.14821938, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1187,8 +1187,8 @@ MonoBehaviour:
   - {fileID: 8825795953280538059}
   - {fileID: 1874375501583311760}
   m_Bounds:
-    m_Center: {x: 0.19884188, y: -0.003588736, z: 0}
-    m_Extent: {x: 0.2743401, y: 0.17771712, z: 0}
+    m_Center: {x: 0.19884193, y: -0.0035887063, z: 0}
+    m_Extent: {x: 0.27434015, y: 0.17771712, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1362,8 +1362,8 @@ MonoBehaviour:
   - {fileID: 5221093454705920567}
   - {fileID: 8002444600537536403}
   m_Bounds:
-    m_Center: {x: 0.26163548, y: -0.008709967, z: 0}
-    m_Extent: {x: 0.2743402, y: 0.17771715, z: 0}
+    m_Center: {x: 0.24853441, y: -0.097126216, z: 0}
+    m_Extent: {x: 0.26692736, y: 0.18683356, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1607,7 +1607,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
   looping: 1
-  prewarm: 0
+  prewarm: 1
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
@@ -1843,8 +1843,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.5
-      minScalar: 0.1
+      scalar: 0.4
+      minScalar: 0.8
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -2478,7 +2478,7 @@ ParticleSystem:
     rateOverDistance:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 15
+      scalar: 20
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -6809,8 +6809,8 @@ MonoBehaviour:
   - {fileID: 1671563073754291701}
   - {fileID: 412631415726187553}
   m_Bounds:
-    m_Center: {x: 0.0007199943, y: 0.0019500852, z: 0}
-    m_Extent: {x: 0.26428002, y: 0.9080502, z: 0}
+    m_Center: {x: -0.029017806, y: -0.20561272, z: 0}
+    m_Extent: {x: 0.2940178, y: 0.7004874, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
