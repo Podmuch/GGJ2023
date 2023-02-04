@@ -225,13 +225,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   branchSlots:
-  - {fileID: 5567117238713677048}
-  - {fileID: 4068565480716963325}
-  - {fileID: 863556288522412473}
+  - Transform: {fileID: 5567117238713677048}
+  - Transform: {fileID: 4068565480716963325}
+  - Transform: {fileID: 863556288522412473}
   rootSlots:
-  - {fileID: 3542978074527100934}
-  - {fileID: 6412185600784551053}
-  - {fileID: 3384329207038503692}
+  - Transform: {fileID: 3542978074527100934}
+  - Transform: {fileID: 6412185600784551053}
+  - Transform: {fileID: 3384329207038503692}
 --- !u!1 &3831347705361717052
 GameObject:
   m_ObjectHideFlags: 0

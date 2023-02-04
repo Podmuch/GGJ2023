@@ -68,14 +68,16 @@ namespace BoxColliders.Project
         {
             var branchPrefab = Resources.Load<GameBranchController>(resourcesConfig.BranchPrefabPath);
 
-            var branchSlots = new List<Transform>(treeInstance.GetBranchSlots());
+            var branchSlots = new List<SlotData>(treeInstance.GetBranchSlots());
             for (int i = 0; i < count; i++)
             {
+                branchSlots.RemoveAll((br) => !br.IsEmpty);
                 var branchSlotId = Random.Range(0, branchSlots.Count);
                 var branchSlot = branchSlots[branchSlotId];
+                branchSlot.IsEmpty = false;
                 branchSlots.RemoveAt(branchSlotId);
 
-                var branchInstance = GameObject.Instantiate<GameBranchController>(branchPrefab, branchSlot);
+                var branchInstance = GameObject.Instantiate<GameBranchController>(branchPrefab, branchSlot.Transform);
                 branchInstance.DisableStateIcon();
                 ResetTransform(branchInstance.transform);
                 branchSlots.AddRange(branchInstance.GetBranchSlots());
@@ -86,14 +88,16 @@ namespace BoxColliders.Project
         {
             var rootPrefab = Resources.Load<GameRootController>(resourcesConfig.RootPrefabPath);
 
-            var rootSlots = new List<Transform>(treeInstance.GetRootSlots());
+            var rootSlots = new List<SlotData>(treeInstance.GetRootSlots());
             for (int i = 0; i < count; i++)
             {
+                rootSlots.RemoveAll((r) => !r.IsEmpty);
                 var rootSlotId = Random.Range(0, rootSlots.Count);
                 var rootSlot = rootSlots[rootSlotId];
+                rootSlot.IsEmpty = false;
                 rootSlots.RemoveAt(rootSlotId);
 
-                var rootInstance = GameObject.Instantiate<GameRootController>(rootPrefab, rootSlot);
+                var rootInstance = GameObject.Instantiate<GameRootController>(rootPrefab, rootSlot.Transform);
                 ResetTransform(rootInstance.transform);
                 rootSlots.AddRange(rootInstance.GetRootSlots());
             }

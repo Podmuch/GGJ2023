@@ -21,5 +21,7 @@ MonoBehaviour:
   MaxAirCapacity: 100
   BranchAirProduction: 50
   AirToEnergyConversion: 25
+  EnergyProductionInterval: 0.5
+  EnergyForGrow: 5
   ElementsCount: 2
   TreePosition: {x: 3, y: 0, z: 0}

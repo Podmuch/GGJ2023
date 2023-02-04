@@ -19,6 +19,8 @@ namespace BoxColliders.Configs
 
         public string TreePrefabPath;
         public string BranchPrefabPath;
+        public string BranchIndicatorPrefabPath;
+        public string SunPrefabPath;
         public string RootPrefabPath;
 
         [SerializeField]

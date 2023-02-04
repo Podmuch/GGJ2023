@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TreePrefabPath: Game/Tree
   BranchPrefabPath: Game/Branch
+  BranchIndicatorPrefabPath: Controllers/BranchIndicator
+  SunPrefabPath: Controllers/SunController
   RootPrefabPath: Game/Root
   stateIcons:
   - State: 0

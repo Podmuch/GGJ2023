@@ -49,15 +49,15 @@ namespace BoxColliders.Project
             var diContext = diContainer.GetReference<GameplayContextsHolder>(null).GameContext;
             diContainer.Fetch(this, diContext);
             
-            var sunPrefab = Resources.Load<SunController>("Controllers/SunController");
-            var sunController = GameObject.Instantiate(sunPrefab);
-            diContainer.Register(sunController, diContext);
-
             CreateGameTree(diContext);
+            
+            CreateSun(diContext);
+
+            CreateBranchIndicator(diContext);
             
             isReady = true;
         }
-
+        
         private void CreateGameTree(object diContext)
         {
             RemoveOldTree(diContext);
@@ -83,7 +83,7 @@ namespace BoxColliders.Project
         {
             var elementsCount = gameplayConfig.ElementsCount;
             GenerateBranches(treeInstance, elementsCount, diContext);
-            GenerateRoots(treeInstance, elementsCount);
+            GenerateRoots(treeInstance, elementsCount, diContext);
         }
         
         private void GenerateBranches(GameTreeController treeInstance, int count, object diContext)
@@ -93,35 +93,41 @@ namespace BoxColliders.Project
             
             var branchPrefab = Resources.Load<GameBranchController>(resourcesConfig.BranchPrefabPath);
 
-            var branchSlots = new List<Transform>(treeInstance.GetBranchSlots());
+            gameBranchesList.EmptySlots.AddRange(treeInstance.GetBranchSlots());
             for (int i = 0; i < count; i++)
             {
-                var branchSlotId = Random.Range(0, branchSlots.Count);
-                var branchSlot = branchSlots[branchSlotId];
-                branchSlots.RemoveAt(branchSlotId);
+                var branchSlotId = Random.Range(0, gameBranchesList.EmptySlots.Count);
+                var branchSlot = gameBranchesList.EmptySlots[branchSlotId];
+                branchSlot.IsEmpty = false;
+                gameBranchesList.EmptySlots.RemoveAt(branchSlotId);
 
-                var branchInstance = GameObject.Instantiate<GameBranchController>(branchPrefab, branchSlot);
+                var branchInstance = GameObject.Instantiate<GameBranchController>(branchPrefab, branchSlot.Transform);
                 branchInstance.Initialize(eventBus, diContainer, diContext);
                 ResetTransform(branchInstance.transform);
-                branchSlots.AddRange(branchInstance.GetBranchSlots());
+                gameBranchesList.EmptySlots.AddRange(branchInstance.GetBranchSlots());
                 gameBranchesList.Branches.Add(branchInstance);
             }
         }
 
-        private void GenerateRoots(GameTreeController treeInstance, int count)
+        private void GenerateRoots(GameTreeController treeInstance, int count, object diContext)
         {
+            var gameRootsList = new GameRootsList();
+            diContainer.Register(gameRootsList, diContext);
+            
             var rootPrefab = Resources.Load<GameRootController>(resourcesConfig.RootPrefabPath);
 
-            var rootSlots = new List<Transform>(treeInstance.GetRootSlots());
+            gameRootsList.EmptySlots.AddRange(treeInstance.GetRootSlots());
             for (int i = 0; i < count; i++)
             {
-                var rootSlotId = Random.Range(0, rootSlots.Count);
-                var rootSlot = rootSlots[rootSlotId];
-                rootSlots.RemoveAt(rootSlotId);
+                var rootSlotId = Random.Range(0, gameRootsList.EmptySlots.Count);
+                var rootSlot = gameRootsList.EmptySlots[rootSlotId];
+                rootSlot.IsEmpty = false;
+                gameRootsList.EmptySlots.RemoveAt(rootSlotId);
 
-                var rootInstance = GameObject.Instantiate<GameRootController>(rootPrefab, rootSlot);
+                var rootInstance = GameObject.Instantiate<GameRootController>(rootPrefab, rootSlot.Transform);
                 ResetTransform(rootInstance.transform);
-                rootSlots.AddRange(rootInstance.GetRootSlots());
+                gameRootsList.EmptySlots.AddRange(rootInstance.GetRootSlots());
+                gameRootsList.Roots.Add(rootInstance);
             }
         }
 
@@ -130,6 +136,20 @@ namespace BoxColliders.Project
             transform.localPosition = Vector3.zero;
             transform.localRotation = Quaternion.identity;
             transform.localScale = Vector3.one;
+        }
+        
+        private void CreateSun(object diContext)
+        {
+            var sunPrefab = Resources.Load<SunController>(resourcesConfig.SunPrefabPath);
+            var sunController = GameObject.Instantiate(sunPrefab);
+            diContainer.Register(sunController, diContext);
+        }
+        
+        private void CreateBranchIndicator(object diContext)
+        {
+            var branchIndicator = Resources.Load<BranchIndicator>(resourcesConfig.BranchIndicatorPrefabPath);
+            var branchIndicatorController = GameObject.Instantiate(branchIndicator);
+            diContainer.Register(branchIndicatorController, diContext);
         }
     }
 }
