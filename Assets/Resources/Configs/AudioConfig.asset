@@ -31,11 +31,3 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: 38ce2b889f2af465abd27575279649ef, type: 3}
   - key: themeSong
     audioClip: {fileID: 8300000, guid: 560192388d3f045ac858fe1c78e14e4d, type: 3}
-  - key: 
-    audioClip: {fileID: 0}
-  - key: 
-    audioClip: {fileID: 0}
-  - key: 
-    audioClip: {fileID: 0}
-  - key: 
-    audioClip: {fileID: 0}
