@@ -37,6 +37,8 @@ namespace BoxColliders.Game
         {
             sunData.currentSunPath = sunConfig.sunPaths[Random.Range(0, sunConfig.sunPaths.Count)];
             sunData.isMoving = true;
+            sunData.currentTime = 0f;
+            sunData.sunFactor = 0f;
         }
     }
 }

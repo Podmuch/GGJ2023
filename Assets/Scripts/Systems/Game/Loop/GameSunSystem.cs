@@ -33,8 +33,12 @@ namespace BoxColliders.Game
             if (!stateData.IsStarted) return;
 
             if (!sunData.isMoving) return;
-            
-            if (sunData.sunFactor <= 1) sunData.sunFactor += Time.deltaTime * sunData.currentSunPath.speed;
+
+            if (sunData.currentTime <= sunData.currentSunPath.time)
+            {
+                sunData.currentTime += Time.deltaTime;
+                sunData.sunFactor = Mathf.InverseLerp(0, sunData.currentSunPath.time, sunData.currentTime);
+            }
             else sunData.isMoving = false;
 
             var sunPosition = sunData.currentSunPath.Evaluate(sunData.sunFactor);
