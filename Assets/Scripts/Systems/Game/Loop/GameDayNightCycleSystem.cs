@@ -4,6 +4,7 @@ using PDGames.DIContainer;
 using PDGames.EventBus;
 using PDGames.Systems;
 using UnityEngine;
+using Utils;
 
 namespace BoxColliders.Game
 {
@@ -13,6 +14,7 @@ namespace BoxColliders.Game
         [DIInject] private GameplayDayNightCycleData dayNightCycleData = default;
         [DIInject] private GameplayDayNightCycleConfig dayNightCycleConfig = default;
         [DIInject] private BackgroundSkyController backgroundController = default;
+        [DIInject] private AudioController audioController = default;
 
         private IDIContainer diContainer;
         private object diContext;
@@ -46,7 +48,9 @@ namespace BoxColliders.Game
                 if(dayNightCycleData.isDay) ProjectEventBus.Instance.Fire<SetNewSunDataEvent>();
                 dayNightCycleData.currentCycleTime = 0f;
                 
+                audioController.PlayAudio(DefinedAudioKeys.dayStartEnd);
                 backgroundController.SetAnimatorBool(dayNightCycleData.isDay);
+                
             }
         }
     }
