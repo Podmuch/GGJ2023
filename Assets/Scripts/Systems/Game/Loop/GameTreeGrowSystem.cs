@@ -94,7 +94,7 @@ namespace BoxColliders.Game
             {
                 if (gameBranchesList.Branches[i].GetStatsIconTransform().position.x > branchInstance.GetStatsIconTransform().position.x)
                 {
-                    if (i < branchIndicatorData.CurrentBranchIndex)
+                    if (i <= branchIndicatorData.CurrentBranchIndex)
                     {
                         branchIndicatorData.CurrentBranchIndex++;
                     }

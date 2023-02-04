@@ -89,7 +89,6 @@ GameObject:
   m_Component:
   - component: {fileID: 215578476767742090}
   - component: {fileID: 4834803429634115443}
-  - component: {fileID: 1992091826444025168}
   m_Layer: 0
   m_Name: InicatorSprite
   m_TagString: Untagged
@@ -152,7 +151,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 21
   m_Sprite: {fileID: 21300000, guid: 369a8525a308d11488f7240b247f8a93, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -164,17 +163,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1992091826444025168
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5665987478377881786}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b0c28c8a743d47558f25715fd9d0976, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sunParent: {fileID: 0}
-  sunSprite: {fileID: 0}

@@ -72,6 +72,18 @@ namespace BoxColliders.Game
         {
             return stateIcon.transform;
         }
+
+        public void HighlightStatIcon()
+        {
+            stateIcon.sortingOrder = 22;
+            stateIcon.transform.localScale = Vector3.one * 1.5f;
+        }
+
+        public void UnhighlightStatIcon()
+        {
+            stateIcon.sortingOrder = 20;
+            stateIcon.transform.localScale = Vector3.one;
+        }
         
         public bool CanProduceWater()
         {

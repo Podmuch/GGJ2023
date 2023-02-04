@@ -62,7 +62,8 @@ namespace BoxColliders.Game
             }
             
             if (!madeMove) return;
-            
+
+            currentBranch.UnhighlightStatIcon();
             ProjectEventBus.Instance.Fire<SetBranchIndicatorEvent>(new SetBranchIndicatorEvent()
             {
                 index =  branchIndicatorData.CurrentBranchIndex
