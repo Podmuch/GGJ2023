@@ -18,17 +18,21 @@ namespace BoxColliders.Game
         private List<SlotData> branchSlots;
         [SerializeField] 
         private SpriteRenderer stateIcon;
+        [SerializeField] 
+        public Transform indicatorParent;
         
         [DIInject]
         private GameplayConfig gameplayConfig;
         
         [SerializeField]
         private GameBranchStateData stateData = new GameBranchStateData();
-
+        
         private IEventBus eventBus;
         private IDIContainer diContainer;
         private object diContext;
-
+        
+        private int stateEnumLength;
+        
         public void Initialize(IEventBus eventBus, IDIContainer diContainer, object diContext)
         {
             this.eventBus = eventBus;
@@ -36,14 +40,30 @@ namespace BoxColliders.Game
             this.diContext = diContext;
             
             diContainer.Fetch(this, diContext);
-            stateData.State = (BranchState)Random.Range(0, Enum.GetNames(typeof(BranchState)).Length);
+            stateEnumLength = Enum.GetNames(typeof(BranchState)).Length;
+            var randomState = (BranchState)Random.Range(0, stateEnumLength);
+
+            SetData(randomState);
             stateData.isTakingAir = true;
-            
+        }
+
+        public void SetNextState()
+        {
+            var currentState = (int)stateData.State;
+            var nextState = currentState + 1;
+            if (nextState >= stateEnumLength)
+                nextState = 0;
+            SetData((BranchState) nextState);
+        }
+        
+        public void SetData(BranchState branchState)
+        {
             stateIcon.gameObject.SetActive(true);
+            stateData.State = branchState;
             stateIcon.sprite = resourcesConfig.GetStateIcon(stateData.State);
             stateIcon.transform.rotation = Quaternion.identity;
         }
-
+        
         public void DisableStateIcon()
         {
             stateIcon.gameObject.SetActive(false);

@@ -11,6 +11,10 @@ namespace BoxColliders.Game
             Add(new GameInitializeGameplayStateDataSystem(eventBus, diContainer, diContext));
             Add(new GameInitializeTreeStateDataSystem(eventBus, diContainer, diContext));
             Add(new GameInitializeGameplaySunDataSystem(eventBus, diContainer, diContext));
+            Add(new GameInitializeBranchIndicatorDataSystem(eventBus, diContainer, diContext));
+            
+            Add(new GameInputSystem(eventBus, diContainer, diContext));
+            
             Add(new GameSetBranchIndicatorReactiveSystem(eventBus, diContainer, diContext));
             
             Add(new GameStartGameplaySystem(eventBus, diContainer, diContext));
