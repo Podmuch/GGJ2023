@@ -23,8 +23,8 @@ MonoBehaviour:
   AirToEnergyConversion: 30
   EnergyProductionInterval: 0.03
   EnergyForGrow: 4
-  MaxBranchHealth: 5
-  SmogHealthConsumption: 1
+  MaxBranchHealth: 50
+  SmogHealthConsumption: 22
   ElementsCount: 2
   TreePosition: {x: 5, y: 0, z: 0}
   GroundLevel: 0
