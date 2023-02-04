@@ -22,7 +22,7 @@ MonoBehaviour:
   BranchAirProduction: 10
   AirToEnergyConversion: 30
   EnergyProductionInterval: 0.03
-  EnergyForGrow: 5
+  EnergyForGrow: 4
   MaxBranchHealth: 5
   SmogHealthConsumption: 1
   ElementsCount: 2
