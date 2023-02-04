@@ -27,16 +27,20 @@ namespace BoxColliders.Game
         public void Initialize()
         {
             diContainer.Fetch(this, diContext);
-            var currentBranchPosition = branchesList.Branches[0].transform.position;
-            branchIndicator.SetPosition(currentBranchPosition);
+            SetPosition(0);
         }
         
 
         protected override void Execute(List<SetBranchIndicatorEvent> events)
         {
-            var setBranchEvent = events[0];
-            
-            var currentBranchPosition = branchesList.Branches[setBranchEvent.index].transform.position;
+            var branchIndex = events[0].index;
+            SetPosition(branchIndex);
+        }
+
+        private void SetPosition(int branchIndex)
+        {
+            var currentBranch = branchesList.Branches[branchIndex];
+            var currentBranchPosition = currentBranch.indicatorParent.transform.position;
             branchIndicator.SetPosition(currentBranchPosition);
         }
     }

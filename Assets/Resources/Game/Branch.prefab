@@ -168,9 +168,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   branchSlots:
-  - Transform: {fileID: 6861182925364859035}
-  - Transform: {fileID: 3070478357800196044}
+  - Transform: {fileID: 0}
+  - Transform: {fileID: 0}
   stateIcon: {fileID: 135884458996909196}
+  indicatorParent: {fileID: 3110574441787022924}
+  stateData:
+    State: 0
+    IsClosedToWeather: 0
+    IsTakingWater: 0
+    IsTakingSun: 0
+    isTakingAir: 0
 --- !u!61 &-6000595953554643019
 BoxCollider2D:
   m_ObjectHideFlags: 0
