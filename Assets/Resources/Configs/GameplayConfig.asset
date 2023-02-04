@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f6e0457c10c4d67bb1b6e7f5c1d07f7, type: 3}
   m_Name: GameplayConfig
   m_EditorClassIdentifier: 
-  MaxWaterCapacity: 100
-  BranchWaterProduction: 50
-  WaterToEnergyConversion: 25
-  MaxSunCapacity: 100
+  MaxWaterCapacity: 25
+  BranchWaterProduction: 10
+  WaterToEnergyConversion: 7
+  MaxSunCapacity: 300
   BranchSunProduction: 50
-  SunToEnergyConversion: 25
-  MaxAirCapacity: 100
-  BranchAirProduction: 50
-  AirToEnergyConversion: 25
-  EnergyProductionInterval: 0.5
+  SunToEnergyConversion: 30
+  MaxAirCapacity: 35
+  BranchAirProduction: 10
+  AirToEnergyConversion: 30
+  EnergyProductionInterval: 0.03
   EnergyForGrow: 5
   ElementsCount: 2
   TreePosition: {x: 3, y: 0, z: 0}
