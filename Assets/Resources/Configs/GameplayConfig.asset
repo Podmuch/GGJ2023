@@ -24,7 +24,7 @@ MonoBehaviour:
   EnergyProductionInterval: 0.03
   EnergyForGrow: 4
   MaxBranchHealth: 50
-  SmogHealthConsumption: 22
+  SmogHealthConsumption: 15
   ElementsCount: 2
   TreePosition: {x: 5, y: 0, z: 0}
   GroundLevel: 0
