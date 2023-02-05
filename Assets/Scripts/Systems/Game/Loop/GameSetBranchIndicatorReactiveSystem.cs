@@ -39,10 +39,13 @@ namespace BoxColliders.Game
 
         private void SetPosition(int branchIndex)
         {
-            var currentBranch = branchesList.Branches[branchIndex];
-            currentBranch.HighlightStatIcon();
-            //var currentBranchPosition = currentBranch.indicatorParent.transform.position;
-            branchIndicator.SetPosition(currentBranch.indicatorParent.transform);
+            if (branchesList.Branches.Count > 0)
+            {
+                var currentBranch = branchesList.Branches[branchIndex];
+                currentBranch.HighlightStatIcon();
+                //var currentBranchPosition = currentBranch.indicatorParent.transform.position;
+                branchIndicator.SetPosition(currentBranch.indicatorParent.transform);
+            }
         }
     }
 }
