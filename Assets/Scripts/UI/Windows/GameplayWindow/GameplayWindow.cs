@@ -20,6 +20,11 @@ namespace BoxColliders.Windows
         {
             eventBus.Fire<UiEndGameRequestEvent>();
         }
+        
+        public void ShowResultPanel()
+        {
+            view.ShowResultPanel();
+        }
 
         #endregion
     }

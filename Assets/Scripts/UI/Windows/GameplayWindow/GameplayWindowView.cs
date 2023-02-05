@@ -36,6 +36,14 @@ namespace BoxColliders.Windows
         private TextMeshProUGUI airConversionValue;
         [SerializeField] 
         private Image energyFulfillImage;
+        
+        [Space]
+        [SerializeField] 
+        private GameObject resultPanel;
+        [SerializeField]
+        private TextMeshProUGUI resultBestSizeValue;
+        [SerializeField] 
+        private TextMeshProUGUI resultCurrentSizeValue;
 
         [Space]
         [SerializeField]
@@ -61,6 +69,7 @@ namespace BoxColliders.Windows
             sunConversionValue.text = gameplayConfig.SunToEnergyConversion + "x";
             airConversionValue.text = gameplayConfig.AirToEnergyConversion + "x";
             UpdateView();
+            resultPanel.SetActive(false);
         }
 
         public override void OnHidden()
@@ -84,6 +93,13 @@ namespace BoxColliders.Windows
 
             BestSizeValue.text = "Best Size: " + gameBranchesList.BestBranchesCount;
             CurrentSizeValue.text = "Current: " + gameBranchesList.Branches.Count;
+        }
+
+        public void ShowResultPanel()
+        {
+            resultPanel.SetActive(true);
+            resultBestSizeValue.text = BestSizeValue.text;
+            resultCurrentSizeValue.text = CurrentSizeValue.text;
         }
     }
 }

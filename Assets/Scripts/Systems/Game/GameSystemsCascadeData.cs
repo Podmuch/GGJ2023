@@ -34,6 +34,8 @@ namespace BoxColliders.Game
             Add(new GameSmogCloudSystem(eventBus, diContainer, diContext));
             Add(new GameEnergyProductionSystem(eventBus, diContainer, diContext));
             Add(new GameTreeGrowSystem(eventBus, diContainer, diContext));
+           
+            Add(new GameCheckIfFinishSystem(eventBus, diContainer, diContext));
 
             Add(new GameClearDiContainerSystem(eventBus, diContainer, diContext));
         }
