@@ -49,6 +49,14 @@ namespace BoxColliders.Windows
             var gameplayContexts = diContainer.GetReference<GameplayContextsHolder>(null);
             diContainer.Fetch(this, gameplayContexts.GameContext, true);
 
+            var waterBarIndicatorValue = Mathf.InverseLerp(0, gameplayConfig.MaxWaterCapacity, gameplayConfig.WaterToEnergyConversion);
+            var sunIndicatorValue = Mathf.InverseLerp(0, gameplayConfig.MaxSunCapacity, gameplayConfig.SunToEnergyConversion);
+            var airBarIndicatorValue = Mathf.InverseLerp(0, gameplayConfig.MaxAirCapacity, gameplayConfig.AirToEnergyConversion);
+            
+            waterProgressBar.SetNeededIndicatorValue(waterBarIndicatorValue);
+            sunProgressBar.SetNeededIndicatorValue(sunIndicatorValue);
+            airProgressBar.SetNeededIndicatorValue(airBarIndicatorValue);
+            
             waterConversionValue.text = gameplayConfig.WaterToEnergyConversion + "x";
             sunConversionValue.text = gameplayConfig.SunToEnergyConversion + "x";
             airConversionValue.text = gameplayConfig.AirToEnergyConversion + "x";

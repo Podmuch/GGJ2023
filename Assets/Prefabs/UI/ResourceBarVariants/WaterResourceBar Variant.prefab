@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 702516622870370754, guid: 4ae0b137d9bff4b0987b8c10d2592b3f, type: 3}
       propertyPath: m_Name
-      value: WaterResourceBar
+      value: WaterResourceBar Variant
       objectReference: {fileID: 0}
     - target: {fileID: 709930082097361405, guid: 4ae0b137d9bff4b0987b8c10d2592b3f, type: 3}
       propertyPath: m_AnchorMax.x
