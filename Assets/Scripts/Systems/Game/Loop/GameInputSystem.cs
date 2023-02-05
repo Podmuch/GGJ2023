@@ -66,6 +66,22 @@ namespace BoxColliders.Game
             {
                 currentBranch.SetNextState();
             }
+            else if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                currentBranch.SetData(BranchState.InActive);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                currentBranch.SetData(BranchState.Water);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                currentBranch.SetData(BranchState.Sun);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha4))
+            {
+                currentBranch.SetData(BranchState.Air);
+            }
             
             wasLeft = Input.GetAxis("Horizontal") < -Mathf.Epsilon;
             wasRight = Input.GetAxis("Horizontal") > Mathf.Epsilon;

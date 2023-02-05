@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using BoxColliders.Configs;
+using BoxColliders.Project;
 using PDGames.DIContainer;
 using PDGames.EventBus;
 using UnityEngine;
@@ -17,6 +18,8 @@ namespace BoxColliders.Game
         private GameplayConfig gameplayConfig;
         [DIInject] 
         private GameBranchesList gameBranchesList;
+        [DIInject] 
+        private GameplayBranchIndicatorData branchIndicatorData;
         
         [SerializeField] 
         private List<SlotData> branchSlots;
@@ -166,7 +169,7 @@ namespace BoxColliders.Game
 
         public bool CanConsumeHealth()
         {
-            return stateData.State != BranchState.InActive && stateData.IsInSmog;
+            return isInitialized && stateData.State != BranchState.InActive && stateData.IsInSmog;
         }
 
         public void ConsumeHealth()
@@ -182,7 +185,7 @@ namespace BoxColliders.Game
                 }
             }
 
-            if (empty)
+            if (empty && isInitialized)
             {
                 stateData.Health -= gameplayConfig.SmogHealthConsumption * Time.deltaTime;
                 if (stateData.Health < 0)
@@ -193,6 +196,16 @@ namespace BoxColliders.Game
                     parentSlot.IsEmpty = true;
                     parentSlot.BranchController = null;
                     gameBranchesList.EmptySlots.Add(parentSlot);
+                    var removedBranchId = gameBranchesList.Branches.IndexOf(this);
+                    if (branchIndicatorData != null && removedBranchId <= branchIndicatorData.CurrentBranchIndex)
+                    {
+                        branchIndicatorData.CurrentBranchIndex--;
+                        ProjectEventBus.Instance.Fire<SetBranchIndicatorEvent>(new SetBranchIndicatorEvent()
+                        {
+                            index =  branchIndicatorData.CurrentBranchIndex
+                        }); 
+                    }
+
                     gameBranchesList.Branches.Remove(this);
                     for (int i = 0; i < branchSlots.Count; i++)
                     {
