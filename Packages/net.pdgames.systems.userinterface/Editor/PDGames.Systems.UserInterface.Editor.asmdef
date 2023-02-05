@@ -1,9 +1,12 @@
 {
     "name": "PDGames.Systems.UserInterface.Editor",
+    "rootNamespace": "",
     "references": [
         "PDGames.Systems.UserInterface.Runtime"
     ],
-    "includePlatforms": [],
+    "includePlatforms": [
+        "Editor"
+    ],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,
