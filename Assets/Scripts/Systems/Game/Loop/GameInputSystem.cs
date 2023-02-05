@@ -67,7 +67,6 @@ namespace BoxColliders.Game
                 currentBranch.SetNextState();
             }
             
-            Debug.LogError("Test=" + Input.GetAxis("Horizontal"));
             wasLeft = Input.GetAxis("Horizontal") < -Mathf.Epsilon;
             wasRight = Input.GetAxis("Horizontal") > Mathf.Epsilon;
             if (madeMove)
