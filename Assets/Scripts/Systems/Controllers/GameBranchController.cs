@@ -163,7 +163,6 @@ namespace BoxColliders.Game
 
             if (empty)
             {
-                Debug.LogError("stateData.Health=" + stateData.Health);
                 stateData.Health -= gameplayConfig.SmogHealthConsumption * Time.deltaTime;
                 if (stateData.Health < 0)
                 {
