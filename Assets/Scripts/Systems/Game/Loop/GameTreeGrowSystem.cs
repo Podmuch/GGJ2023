@@ -105,7 +105,12 @@ namespace BoxColliders.Game
             }
             if (!added) gameBranchesList.Branches.Add(branchInstance);
 
-             var emptySlots = branchInstance.GetBranchSlots();
+            if (gameBranchesList.BestBranchesCount < gameBranchesList.Branches.Count)
+            {
+                gameBranchesList.BestBranchesCount = gameBranchesList.Branches.Count;
+            }
+            
+            var emptySlots = branchInstance.GetBranchSlots();
             for (int i = 0; i < emptySlots.Count; i++)
             {
                 if (emptySlots[i].Transform.position.y - gameplayConfig.ElementSize > gameplayConfig.GroundLevel)

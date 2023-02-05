@@ -181,6 +181,11 @@ namespace BoxColliders.Project
                 }
             }
             if (!added) gameBranchesList.Branches.Add(branchInstance);
+            
+            if (gameBranchesList.BestBranchesCount < gameBranchesList.Branches.Count)
+            {
+                gameBranchesList.BestBranchesCount = gameBranchesList.Branches.Count;
+            }
 
             var emptySlots = branchInstance.GetBranchSlots();
             for (int i = 0; i < emptySlots.Count; i++)

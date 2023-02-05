@@ -18,7 +18,8 @@ namespace BoxColliders.Game
         private IDIContainer diContainer;
         private object diContext;
 
-        private bool axisPressed = false;
+        private bool wasLeft = false;
+        private bool wasRight = false;
         
         public GameInputSystem(IEventBus eventBus, IDIContainer diContainer, object diContext)
         {
@@ -41,9 +42,9 @@ namespace BoxColliders.Game
             var currentBranch = branchesList.Branches[branchIndicatorData.CurrentBranchIndex];
             var madeMove = false;
             
-            if (Input.GetAxis("Horizontal") == -1f && !axisPressed)
+            if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow) ||
+                (Input.GetAxis("Horizontal") < -Mathf.Epsilon && !wasLeft))
             {
-                axisPressed = true;
                 branchIndicatorData.CurrentBranchIndex -= 1;
                 
                 if (branchIndicatorData.CurrentBranchIndex <= -1)
@@ -51,9 +52,9 @@ namespace BoxColliders.Game
 
                 madeMove = true;
             }
-            else if (Input.GetAxis("Horizontal") == 1f && !axisPressed)
+            else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow) ||
+                     (Input.GetAxis("Horizontal") > Mathf.Epsilon && !wasRight))
             {
-                axisPressed = true;
                 branchIndicatorData.CurrentBranchIndex += 1;
                 
                 if (branchIndicatorData.CurrentBranchIndex > branchesLastIndex)
@@ -61,24 +62,22 @@ namespace BoxColliders.Game
                 
                 madeMove = true;
             }
-
             else if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Fire3"))
             {
                 currentBranch.SetNextState();
             }
-
-            else if (Mathf.Abs(Input.GetAxis("Horizontal")) <1f && axisPressed )
-            {
-                axisPressed=!axisPressed;
-            }
             
-            if (!madeMove) return;
-
-            currentBranch.UnhighlightStatIcon();
-            ProjectEventBus.Instance.Fire<SetBranchIndicatorEvent>(new SetBranchIndicatorEvent()
+            Debug.LogError("Test=" + Input.GetAxis("Horizontal"));
+            wasLeft = Input.GetAxis("Horizontal") < -Mathf.Epsilon;
+            wasRight = Input.GetAxis("Horizontal") > Mathf.Epsilon;
+            if (madeMove)
             {
-                index =  branchIndicatorData.CurrentBranchIndex
-            });
+                currentBranch.UnhighlightStatIcon();
+                ProjectEventBus.Instance.Fire<SetBranchIndicatorEvent>(new SetBranchIndicatorEvent()
+                {
+                    index =  branchIndicatorData.CurrentBranchIndex
+                }); 
+            }
         }
     }
 }
