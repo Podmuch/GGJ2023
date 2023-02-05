@@ -17,6 +17,8 @@ namespace BoxColliders.Windows
         private GameplayConfig gameplayConfig;
         [DIInject]
         private GameTreeStateData treeStateData;
+        [DIInject] 
+        private GameBranchesList gameBranchesList;
         
         [SerializeField] 
         private SimpleProgressBarView waterProgressBar;
@@ -34,6 +36,12 @@ namespace BoxColliders.Windows
         private TextMeshProUGUI airConversionValue;
         [SerializeField] 
         private Image energyFulfillImage;
+
+        [Space]
+        [SerializeField]
+        private TextMeshProUGUI BestSizeValue;
+        [SerializeField] 
+        private TextMeshProUGUI CurrentSizeValue;
         
         public override void WillShow()
         {
@@ -65,6 +73,9 @@ namespace BoxColliders.Windows
             airProgressBar.SetTextValue(treeStateData.CurrentAir);
             
             energyFulfillImage.fillAmount = Mathf.Clamp01((float)treeStateData.Energy / (float)gameplayConfig.EnergyForGrow);
+
+            BestSizeValue.text = "Best Size: " + gameBranchesList.BestBranchesCount;
+            CurrentSizeValue.text = "Current: " + gameBranchesList.Branches.Count;
         }
     }
 }
