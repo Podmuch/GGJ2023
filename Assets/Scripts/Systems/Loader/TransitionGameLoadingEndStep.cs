@@ -9,10 +9,13 @@ namespace BoxColliders.Project
 {
     public sealed class TransitionGameLoadingEndStep : LoaderStep
     {
+        [DIInject] 
+        private MainCameraController mainCameraController;
         private IDIContainer diContainer;
 
         public TransitionGameLoadingEndStep(IEventBus eventBus, IDIContainer diContainer) : base(eventBus)
         {
+            diContainer.Fetch(this);
             this.diContainer = diContainer;
         }
 
@@ -34,6 +37,8 @@ namespace BoxColliders.Project
         public override void PerformStep()
         {
             eventBus.Fire(new UiShowWindowEvent() { Type = typeof(GameplayWindow) });
+            
+            mainCameraController.Animator.SetTrigger(DefinedStrings.StartIntro);
         }
     }
 }

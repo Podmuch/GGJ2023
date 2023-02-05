@@ -7,5 +7,6 @@ namespace Utils
         public const string Smog = "Smog";
 
         public const string IsDay = "IsDay";
+        public const string StartIntro = "StartIntro";
     }
 }
