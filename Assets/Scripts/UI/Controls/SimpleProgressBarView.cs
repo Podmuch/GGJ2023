@@ -13,6 +13,10 @@ namespace BoxColliders.Controls
         private Slider progressBar;
         [SerializeField] 
         private TextMeshProUGUI progressValue;
+        [SerializeField] 
+        private RectTransform neededValueParentIndicator;
+        [SerializeField] 
+        private RectTransform neededValueIndicator;
 
         public void SetIcon(Sprite icon)
         {
@@ -22,6 +26,13 @@ namespace BoxColliders.Controls
         public void SetBarValue(float value)
         {
             progressBar.value = value;
+        }
+        
+        public void SetNeededIndicatorValue(float value)
+        {
+            var width = neededValueParentIndicator.rect.width;
+
+            neededValueIndicator.anchoredPosition = new Vector2(value * width, neededValueIndicator.anchoredPosition.y);
         }
 
         public void SetTextValue(float value)
