@@ -41,8 +41,8 @@ namespace BoxColliders.Game
         {
             var currentBranch = branchesList.Branches[branchIndex];
             currentBranch.HighlightStatIcon();
-            var currentBranchPosition = currentBranch.indicatorParent.transform.position;
-            branchIndicator.SetPosition(currentBranchPosition);
+            //var currentBranchPosition = currentBranch.indicatorParent.transform.position;
+            branchIndicator.SetPosition(currentBranch.indicatorParent.transform);
         }
     }
 }

@@ -6,14 +6,22 @@ public class BranchIndicator : MonoBehaviour
     private Transform indicatorParent; 
     [SerializeField] 
     private SpriteRenderer indicatorSprite;
-    
+
+    private Transform followedTransform;
+
+    private void Update()
+    {
+        if(followedTransform != null)
+        indicatorParent.position = followedTransform.position;
+    }
+
     public void Initialize()
     {
         
     }
-
-    public void SetPosition(Vector2 position)
+    
+    public void SetPosition(Transform followedTransform)
     {
-        indicatorParent.position = position;
+        this.followedTransform = followedTransform;
     }
 }
