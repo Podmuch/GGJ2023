@@ -5,6 +5,7 @@ namespace BoxColliders.Project
     public sealed class MainCameraController : MonoBehaviour
     {
         public Camera MainCamera = default;
+        public Animator Animator = default;
         
         private static MainCameraController Instance { get; set; }
 
