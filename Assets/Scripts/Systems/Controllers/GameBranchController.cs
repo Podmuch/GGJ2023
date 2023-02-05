@@ -32,9 +32,24 @@ namespace BoxColliders.Game
         private IEventBus eventBus;
         private IDIContainer diContainer;
         private object diContext;
+
+        private float targetScale;
+        private bool isInitialized;
         
         private int stateEnumLength;
         private SlotData parentSlot;
+        
+        #region MONO BEHAVIOUR
+
+        private void Update()
+        {
+            if (isInitialized)
+            {
+                SetStateIconScale();
+            }
+        }
+        
+        #endregion
         
         public void Initialize(IEventBus eventBus, IDIContainer diContainer, object diContext, SlotData slot, bool newBranch = false)
         {
@@ -44,13 +59,15 @@ namespace BoxColliders.Game
 
             parentSlot = slot;
             parentSlot.BranchController = this;
-            
+
+            isInitialized = true;
             diContainer.Fetch(this, diContext);
             stateEnumLength = Enum.GetNames(typeof(BranchState)).Length;
             var randomState = (BranchState)Random.Range(0, stateEnumLength);
 
             stateData.Health = gameplayConfig.MaxBranchHealth;
             SetData(randomState);
+            UnhighlightStatIcon();
             stateData.IsTakingAir = true;
             if (!newBranch) ForceAnimationState("Idle");
             else StartGrowAnimation();
@@ -104,12 +121,16 @@ namespace BoxColliders.Game
         public void HighlightStatIcon()
         {
             stateIcon.sortingOrder = 22;
+            targetScale = 1.5f;
+            SetStateIconScale();
             stateIcon.transform.localScale = Vector3.one * 1.5f;
         }
 
         public void UnhighlightStatIcon()
         {
             stateIcon.sortingOrder = 20;
+            targetScale = 1;
+            SetStateIconScale();
             stateIcon.transform.localScale = Vector3.one;
         }
         
@@ -168,6 +189,7 @@ namespace BoxColliders.Game
                 {
                     StartPoisonedAnimation();
                     DisableStateIcon();
+                    isInitialized = false;
                     parentSlot.IsEmpty = true;
                     parentSlot.BranchController = null;
                     gameBranchesList.EmptySlots.Add(parentSlot);
@@ -184,8 +206,14 @@ namespace BoxColliders.Game
         {
             return branchSlots;
         }
+
+        private void SetStateIconScale()
+        {
+            var factor = indicatorParent.lossyScale.x / indicatorParent.localScale.x;
+            indicatorParent.localScale = Vector3.one * targetScale / factor;
+        }
         
-        void OnTriggerEnter2D(Collider2D collision)
+        private void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.gameObject.CompareTag(DefinedStrings.Sun))
             {
@@ -203,7 +231,7 @@ namespace BoxColliders.Game
             }
         }
         
-        void OnTriggerExit2D(Collider2D collision)
+        private void OnTriggerExit2D(Collider2D collision)
         {
             if (collision.gameObject.CompareTag(DefinedStrings.Sun))
             {
