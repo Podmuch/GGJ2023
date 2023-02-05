@@ -1,0 +1,132 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: AAAAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 4096
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 0e3509360296142ae930476e9fa200ec, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 5405d690fb006463a8a622d288862a9b, type: 3}
+  - {fileID: 21300000, guid: 6b5b30a07dd734c46b357297b1c590fc, type: 3}
+  - {fileID: 21300000, guid: b6c70fb0a0fc64b41a3fb44a6361c879, type: 3}
+  - {fileID: 21300000, guid: cdea8e91f4e6b4687ad1ec883863b33d, type: 3}
+  - {fileID: 21300000, guid: 18d75bb2880f94490b865dc0ad121696, type: 3}
+  - {fileID: 21300000, guid: 922e1ce24a554499ba2c3a5869c35dd5, type: 3}
+  - {fileID: 21300000, guid: cf71860491a5d6145a7df152d0966e29, type: 3}
+  - {fileID: 21300000, guid: c7016d24716d292469abb9257256e7f2, type: 3}
+  - {fileID: 21300000, guid: 8dd309d41772d4c9197459ac1b732fc6, type: 3}
+  - {fileID: 21300000, guid: 884c4f555e2ed2044a3ee0a640f7f066, type: 3}
+  - {fileID: 21300000, guid: b7b98965225d74dc78b543b861fa0ba5, type: 3}
+  - {fileID: 21300000, guid: 95a652a5e5384dd44bb100f67a9042d8, type: 3}
+  - {fileID: 21300000, guid: 564f27d51cf5145f1b46612360d6251c, type: 3}
+  - {fileID: 21300000, guid: 3c9fa3069f528aa4c947dda047085446, type: 3}
+  - {fileID: 21300000, guid: 057c9e763ce3cb64b9ec1456394a8a56, type: 3}
+  - {fileID: 21300000, guid: 4522c4868b54d425da1d2e60bbce08d1, type: 3}
+  - {fileID: 21300000, guid: b0282347d81822f43bf20dacb2c8c575, type: 3}
+  - {fileID: 21300000, guid: 6591f067ee9354f1caae22a8a094eb9e, type: 3}
+  - {fileID: 21300000, guid: e83336871996f324ebce161fe178ff58, type: 3}
+  - {fileID: 21300000, guid: 2d4dc59771a154ca5aa44872ee799844, type: 3}
+  - {fileID: 21300000, guid: 5c929018bb4a4435a970001c6f523f15, type: 3}
+  - {fileID: 21300000, guid: f3f76029e5101418c8dffa02f800cdea, type: 3}
+  - {fileID: 21300000, guid: 2c8e1b89a61fe4488bb412f2f4a13218, type: 3}
+  - {fileID: 21300000, guid: 6d4b325a8ac644a4abbda3db615ef3f7, type: 3}
+  - {fileID: 21300000, guid: fec4e1babaf8e4bb4be91f8677c6a281, type: 3}
+  - {fileID: 21300000, guid: 4d39406b132e74b46b616cd46dfbff2c, type: 3}
+  - {fileID: 21300000, guid: 81c3339b773a89b4896c2e81cba33874, type: 3}
+  - {fileID: 21300000, guid: 0dbbbebb20060435b8c6f5fca1d27c33, type: 3}
+  - {fileID: 21300000, guid: 59cbdf3c3e09e49c4a1011c6fc21c7da, type: 3}
+  - {fileID: 21300000, guid: b975a45c403c44236850d428593f38c6, type: 3}
+  - {fileID: 21300000, guid: 46ca9f8cda2bb084d8209faa185dbd8b, type: 3}
+  - {fileID: 21300000, guid: 7a358b6d199ac634481ff4ae1e61e8b7, type: 3}
+  - {fileID: 21300000, guid: 937f951e18b9548d69615b15fca45b86, type: 3}
+  - {fileID: 21300000, guid: be8ccf4e7d96f4bc0ae69a523f2c0478, type: 3}
+  - {fileID: 21300000, guid: 4a3236aec838f40d9ad5024e190dfe7b, type: 3}
+  - {fileID: 21300000, guid: 696e96ae645b24fabb5f2a3b6b8392e6, type: 3}
+  - {fileID: 21300000, guid: 98eaab3f7d7f5b543a4af23b4c53679c, type: 3}
+  - {fileID: 21300000, guid: 56911f7fe0b7d4f3dbe6c8e2bed2954f, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Grass
+  - Raindrops_Spritesheet
+  - PulsePointer
+  - Glow_1
+  - Branch 1
+  - Leaf_1
+  - Leaf_4
+  - Trees
+  - Day_Night
+  - Sun_Spritesheet
+  - water_drop
+  - Sun_Sprite
+  - sun_icon
+  - Bushes
+  - EnergyArrow
+  - thunder
+  - CloudTrail_Spritesheet
+  - Wind
+  - SunRayParticle
+  - Background_New
+  - Root
+  - inactive_icon
+  - Cloud_2
+  - energy_icon
+  - Ground
+  - Wind_Trail
+  - Leaf_2
+  - Branch
+  - Stump
+  - Horizon
+  - Sunbeam
+  - Cloud_1
+  - Leaf_Spritesheet
+  - Background
+  - Seagull_Sheet_Deep
+  - Star
+  - Leaf_3
+  - wind_icon
+  m_RenderDataMap: {}
+  m_Tag: AAAAtlas
+  m_IsVariant: 0
