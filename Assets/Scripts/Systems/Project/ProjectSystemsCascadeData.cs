@@ -18,6 +18,7 @@ namespace BoxColliders.Project
             Add(new UiManagementSystems(eventBus, diContainer));
             Add(new ProjectTransitionSystems(eventBus, diContainer));
             
+            Add(new ProjectExitGameSystem(eventBus, diContainer));
             Add(new ProjectEventsDestroySystem(eventBus, diContainer));
             Add(new ProjectDeinitializationSystem(eventBus, diContainer));
         }
