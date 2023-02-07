@@ -10,6 +10,8 @@ namespace BoxColliders.Windows
 
         private void Update()
         {
+            if (!IsVisible) return;
+            
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Fire3"))
             {
                 OnPlayPressed();

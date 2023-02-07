@@ -16,6 +16,6 @@ MonoBehaviour:
   UiRootName: UIRoot
   RenderMode: 0
   ScaleMode: 1
-  ReferenceResolution: {x: 1920, y: 1080}
+  ReferenceResolution: {x: 1080, y: 1920}
   ScreenMatchMode: 0
-  MatchWidthOrHeight: 0
+  MatchWidthOrHeight: 1

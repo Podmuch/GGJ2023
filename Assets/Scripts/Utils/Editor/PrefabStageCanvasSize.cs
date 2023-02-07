@@ -27,7 +27,7 @@ static class PrefabStageCanvasSize
 				var scaler =
 				 stage.prefabContentsRoot.transform.parent.gameObject
 				      .AddComponent<CanvasScaler>();
-				scaler.referenceResolution = new Vector2(1920, 1080);
+				scaler.referenceResolution = new Vector2(1080, 1920);
 				scaler.matchWidthOrHeight = 1;
 				scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
 

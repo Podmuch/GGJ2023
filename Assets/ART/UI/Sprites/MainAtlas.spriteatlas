@@ -51,16 +51,20 @@ SpriteAtlas:
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: 65313b83ce796e2499fa7cc0e380dae8, type: 3}
+  - {fileID: 21300000, guid: 6fb229f30f5274f6b98c65211948480b, type: 3}
   - {fileID: 21300000, guid: eca5bc74d949a9f4ba52b87a9e1bb9b9, type: 3}
   - {fileID: 21300000, guid: 369a8525a308d11488f7240b247f8a93, type: 3}
+  - {fileID: 21300000, guid: 7c553609bfca24513ad5be8077c7516a, type: 3}
   - {fileID: 21300000, guid: ee859b6a3c457b040bce15e305ab524e, type: 3}
   - {fileID: 21300000, guid: 02e06adcbc243934f90141910603a0da, type: 3}
   - {fileID: 21300000, guid: 1badd64d57d2449a0953d7decc2f2df8, type: 3}
   - {fileID: 21300000, guid: 512f816d5bc0e2b4ca51a550fc13a090, type: 3}
   m_PackedSpriteNamesToIndex:
   - MenuBackground
+  - BottomBar
   - Bar_White
   - waiting_arrows
+  - TopBar
   - Bar_Blue
   - Bar_Yellow
   - BoxCollidersLogo
