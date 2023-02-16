@@ -1436,7 +1436,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &8235951316132259696
 Animator:
-  serializedVersion: 5
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1453,7 +1453,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!54 &2531427335760632572
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1515,7 +1515,7 @@ MonoBehaviour:
   animator: {fileID: 8235951316132259696}
   shootParticles: {fileID: 0}
   movingTurnSpeed: 540
-  stationaryTurnSpeed: 180
+  stationaryTurnSpeed: 160
   moveSpeedMultiplier: 1
   speedAnimationMultiplier: 1
   runAmountScaler: 1.3
