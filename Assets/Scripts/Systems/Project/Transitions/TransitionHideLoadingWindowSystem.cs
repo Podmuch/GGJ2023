@@ -5,6 +5,7 @@ using PDGames.Systems;
 using PDGames.Systems.Loader;
 using PDGames.UserInterface;
 using BoxColliders.Windows;
+using StemSystem;
 
 namespace BoxColliders.Project
 {
@@ -24,7 +25,7 @@ namespace BoxColliders.Project
         
         protected override void Execute(List<LoaderFinishedEvent> entities)
         {
-            eventBus.Fire(new UiHideWindowEvent(){ Type = typeof(LoadingWindow) });
+            Stem.UI.HideWindow<LoadingWindow>();
         }
     }
 }

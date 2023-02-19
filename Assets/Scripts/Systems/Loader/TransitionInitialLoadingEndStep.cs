@@ -3,6 +3,7 @@ using PDGames.EventBus;
 using PDGames.Systems.Loader;
 using PDGames.UserInterface;
 using BoxColliders.Windows;
+using StemSystem;
 using Utils;
 
 namespace BoxColliders.Project
@@ -33,7 +34,7 @@ namespace BoxColliders.Project
 
         public override void PerformStep()
         {
-            eventBus.Fire(new UiShowWindowEvent() { Type = typeof(MainWindow) });
+            Stem.UI.ShowWindow<MainWindow>();
         }
     }
 }

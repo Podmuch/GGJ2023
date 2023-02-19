@@ -3,8 +3,8 @@ using PDGames.DIContainer;
 using PDGames.EventBus;
 using PDGames.Systems;
 using PDGames.Systems.Loader;
-using PDGames.UserInterface;
 using BoxColliders.Windows;
+using StemSystem;
 
 namespace BoxColliders.Project
 {
@@ -29,7 +29,7 @@ namespace BoxColliders.Project
         {
             if (loaderQueue.IsStarted)
             {
-                eventBus.Fire(new UiShowWindowEvent(){ Type = typeof(LoadingWindow) });
+                Stem.UI.ShowWindow<LoadingWindow>();
             }
         }
     }
