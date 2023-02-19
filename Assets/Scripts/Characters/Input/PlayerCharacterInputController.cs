@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+using PDGames.DIContainer;
 using UnityEngine;
 
 namespace Controllers
@@ -13,6 +13,9 @@ namespace Controllers
         private Vector3 cameraForward;
         private Vector3 cameraRight;
 
+        private IDIContainer diContainer;
+        private object diContext;
+        
         public FixedJoystick LeftJoystick
         {
             get => leftJoystick;
@@ -41,6 +44,13 @@ namespace Controllers
         {
         }
 
+        public void Initialize(IDIContainer diContainer, object diContext)
+        {
+            this.diContainer = diContainer;
+            this.diContext = diContext;
+            diContainer.Fetch(this, diContext);
+        }
+        
         void Start()
         {
         }
@@ -66,6 +76,8 @@ namespace Controllers
         // Update is called once per frame
         void Update()
         {
+            if (leftJoystick == null || cameraTransform == null) return;
+            
             var vInput = leftJoystick.Vertical;
             var hInput = leftJoystick.Horizontal;
 

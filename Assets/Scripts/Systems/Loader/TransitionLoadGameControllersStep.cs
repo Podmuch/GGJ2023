@@ -1,7 +1,9 @@
 using PDGames.DIContainer;
 using PDGames.EventBus;
 using BoxColliders.Game;
+using Controllers;
 using PDGames.Systems.Loader;
+using UnityEngine;
 using Utils;
 
 namespace BoxColliders.Project
@@ -10,6 +12,11 @@ namespace BoxColliders.Project
     {
         [DIInject] 
         private GameplayObjectsPool objectsPool = default;
+
+        private string controllersPath = "Controllers/";
+        
+        private string playerControllerPath = "PlayerController";
+        
         
         private IDIContainer diContainer;
 
@@ -39,6 +46,15 @@ namespace BoxColliders.Project
         {
             var diContext = diContainer.GetReference<GameplayContextsHolder>(null).GameContext;
             diContainer.Fetch(this, diContext);
+
+            var controllersParent = MonoBehaviour.Instantiate(new GameObject());
+            controllersParent.name = "GameplayControllers";
+            diContainer.Register(controllersParent, diContext);
+            
+            var playerControllerPrefab = Resources.Load<PlayerController>(controllersPath + playerControllerPath);
+            var playerController = MonoBehaviour.Instantiate(playerControllerPrefab, controllersParent.transform);
+            playerController.Initialize(diContainer, diContext);
+            diContainer.Register(playerController, diContext);
             
             isReady = true;
         }

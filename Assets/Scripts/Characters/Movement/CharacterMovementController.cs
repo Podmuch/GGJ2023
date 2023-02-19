@@ -1,4 +1,5 @@
 using System;
+using PDGames.DIContainer;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -40,6 +41,8 @@ namespace Controllers
         private float previousForwardAmount;
         private int licznik;
         
+        private IDIContainer diContainer;
+        private object diContext;
         
         //Properties
         
@@ -49,9 +52,11 @@ namespace Controllers
             set => _rigidbody = value;
         }
         
-        public void Initialize()
+        public void Initialize(IDIContainer diContainer, object diContext)
         {
-            
+            this.diContainer = diContainer;
+            this.diContext = diContext;
+            diContainer.Fetch(this, diContext);
         }
 
         private void Update()
