@@ -1498,6 +1498,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterMovementController: {fileID: 2531427335760632573}
+  playerInputController: {fileID: 2531427335760632546}
 --- !u!114 &2531427335760632546
 MonoBehaviour:
   m_ObjectHideFlags: 0
