@@ -1,4 +1,7 @@
+using System;
 using System.Collections.Generic;
+using BoxColliders.Project;
+using PDGames.UserInterface;
 //using Windows;
 using UnityEngine;
 
@@ -8,9 +11,9 @@ namespace Services
     {
         private const string windowsPath = "Windows/";
         
-    //     private List<IWindow> hudWindows = new List<IWindow>();
-    //     private List<IWindow>  modalWindows = new List<IWindow>();
-    //     private List<IWindow>  standardWindows = new List<IWindow>();
+    private List<IBaseWindow> hudWindows = new List<IBaseWindow>();
+    private List<IBaseWindow>  modalWindows = new List<IBaseWindow>();
+    private List<IBaseWindow>  standardWindows = new List<IBaseWindow>();
     //     
     public override void Initialize()
     {
@@ -33,8 +36,28 @@ namespace Services
     //             }
     //         }
     //         
+    
         Debug.Log("<color=green>[Services]</color> UI Service has been Initialized");
     }
+
+    public void ShowWindow<T>()
+    {
+        ProjectEventBus.Instance.Fire(new UiShowWindowEvent() { Type = typeof(T)});
+    }
+    
+    public void HideWindow<T>()
+    {
+        ProjectEventBus.Instance.Fire(new UiHideWindowEvent() { Type = typeof(T) });
+    }
+
+    public T GetWindow<T>() where T : class
+    {
+        var foundWindow = MonoBehaviour.FindObjectOfType(typeof(T));
+        if (foundWindow != null) return foundWindow as T;
+
+        return null;
+    }
+    
     //
     public override void Deinitialize()
     {
