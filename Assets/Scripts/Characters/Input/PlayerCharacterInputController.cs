@@ -80,18 +80,5 @@ namespace Controllers
         }
 
         // Update is called once per frame
-        void Update()
-        {
-            if (leftJoystick == null || cameraTransform == null) return;
-            
-            var vInput = leftJoystick.Vertical;
-            var hInput = leftJoystick.Horizontal;
-
-            cameraForward = cameraTransform.forward;
-            cameraRight = cameraTransform.right;
-                
-            Vector3 move = vInput * cameraForward + hInput * cameraRight;
-            playerCharacter.Move(move);
-        }
     }
 }

@@ -6,13 +6,10 @@ namespace Controllers
     public class PlayerController : MonoBehaviour
     {
         [SerializeField] private CharacterMovementController characterMovementController;
-        [SerializeField] private PlayerCharacterInputController playerInputController;
 
         public CharacterMovementController CharacterMovementController => characterMovementController;
-        public PlayerCharacterInputController PlayerInputController => playerInputController;
-
         
-
+        
         private IDIContainer diContainer;
         private object diContext;
 
@@ -22,7 +19,6 @@ namespace Controllers
             this.diContext = diContext;
             diContainer.Fetch(this, diContext);
             
-            playerInputController.Initialize(diContainer, diContext);
             characterMovementController.Initialize(diContainer, diContext);
         }
     }

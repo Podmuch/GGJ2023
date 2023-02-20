@@ -1,7 +1,6 @@
-using System;
 using PDGames.DIContainer;
 using UnityEngine;
-using UnityEngine.Serialization;
+using Utils;
 
 namespace Controllers
 {
@@ -149,8 +148,8 @@ namespace Controllers
                 speedDump = speedDampStopping;
             }
             
-            animator.SetFloat("Speed", forwardAmountScaled, speedDump, Time.deltaTime);
-            animator.SetBool("Shoot", Input.GetKey(KeyCode.Space));
+            animator.SetFloat(DefinedAnimationParams.Speed, forwardAmountScaled, speedDump, Time.deltaTime);
+            animator.SetBool(DefinedAnimationParams.Attack, Input.GetKey(KeyCode.Space));
 
             if (Input.GetKey(KeyCode.Space))
             { 
