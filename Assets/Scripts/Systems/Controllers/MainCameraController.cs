@@ -6,7 +6,7 @@ namespace BoxColliders.Project
     {
         public Camera MainCamera = default;
         
-        private static MainCameraController Instance { get; set; }
+        public static MainCameraController Instance { get; set; }
 
         #region MONO BEHAVIOUR
         

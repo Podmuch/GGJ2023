@@ -1,8 +1,10 @@
 using PDGames.DIContainer;
 using PDGames.EventBus;
 using BoxColliders.Game;
+using BoxColliders.Windows;
 using Controllers;
 using PDGames.Systems.Loader;
+using StemSystem;
 using UnityEngine;
 using Utils;
 
@@ -54,7 +56,17 @@ namespace BoxColliders.Project
             var playerControllerPrefab = Resources.Load<PlayerController>(controllersPath + playerControllerPath);
             var playerController = MonoBehaviour.Instantiate(playerControllerPrefab, controllersParent.transform);
             playerController.Initialize(diContainer, diContext);
+
+            var gameplayWindow = Stem.UI.GetWindow<GameplayWindow>();
+            var joystick = gameplayWindow.GetJoystick();
+            playerController.PlayerInputController.LeftJoystick = joystick;
+            playerController.PlayerInputController.cameraTransform = MainCameraController.Instance.transform;
+
+            var cameraFollowScript = MainCameraController.Instance.GetComponent<CameraFollow>();
+            cameraFollowScript.carTransform = playerController.transform;
+                
             diContainer.Register(playerController, diContext);
+            
             
             isReady = true;
         }

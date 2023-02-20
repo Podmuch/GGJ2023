@@ -5,6 +5,12 @@ namespace BoxColliders.Windows
 {
     public sealed class GameplayWindow : BaseWindow<GameplayWindowView>
     {
+
+        public FixedJoystick GetJoystick()
+        {
+            return view.GetJoystick();
+        }
+        
         #region INPUT HANDLING
 
         public void OnContinuePressed()

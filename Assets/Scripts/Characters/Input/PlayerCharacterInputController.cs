@@ -21,6 +21,12 @@ namespace Controllers
             get => leftJoystick;
             set => leftJoystick = value;
         }
+        
+        public Transform CameraTransform
+        {
+            get => cameraTransform;
+            set => cameraTransform = value;
+        }
 
         public CharacterMovementController PlayerCharacter
         {

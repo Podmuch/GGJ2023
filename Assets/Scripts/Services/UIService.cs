@@ -9,6 +9,13 @@ namespace Services
 {
     public class UIService : Service
     {
+        private UiHolder uiHolder;
+
+        public UiHolder UIHolder
+        {
+            set => uiHolder = value;
+        }
+
         private const string windowsPath = "Windows/";
         
     private List<IBaseWindow> hudWindows = new List<IBaseWindow>();
@@ -50,12 +57,12 @@ namespace Services
         ProjectEventBus.Instance.Fire(new UiHideWindowEvent() { Type = typeof(T) });
     }
 
-    public T GetWindow<T>() where T : class
+    public T GetWindow<T>() where T : IBaseWindow
     {
-        var foundWindow = MonoBehaviour.FindObjectOfType(typeof(T));
-        if (foundWindow != null) return foundWindow as T;
+        uiHolder ??= ProjectDIContainer.Instance.GetReference<UiHolder>(null);
 
-        return null;
+        var window = uiHolder.GetWindow<T>();
+        return window;
     }
     
     //

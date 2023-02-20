@@ -1,12 +1,16 @@
 using System;
 using BoxColliders.Game;
 using PDGames.UserInterface;
+using UnityEngine;
 
 namespace BoxColliders.Windows
 {
     [Serializable]
     public sealed class GameplayWindowView : BaseWindowView
     {
+        [SerializeField]
+        private FixedJoystick joystick;
+        
         public override void WillShow()
         {
             base.WillShow();
@@ -18,6 +22,11 @@ namespace BoxColliders.Windows
         {
             base.OnHidden();
             diContainer.Unfetch(this);
+        }
+        
+        public FixedJoystick GetJoystick()
+        {
+            return joystick;
         }
     }
 }

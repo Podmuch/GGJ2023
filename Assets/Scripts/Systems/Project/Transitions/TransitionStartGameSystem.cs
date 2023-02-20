@@ -38,9 +38,9 @@ namespace BoxColliders.Project
             loaderQueue.Steps.Add(new TransitionGameLoadingStartStep(eventBus, diContainer));
             loaderQueue.Steps.Add(new TransitionCreateGameSystemsCascadeStep(eventBus, diContainer));
             loaderQueue.Steps.Add(new TransitionCreateObjectsPoolStep(eventBus, diContainer));
+            loaderQueue.Steps.Add(new TransitionGameLoadingEndStep(eventBus, diContainer));
             loaderQueue.Steps.Add(new TransitionLoadGameControllersStep(eventBus, diContainer));
             loaderQueue.Steps.Add(new TransitionInitializeGameStep(eventBus, diContainer));
-            loaderQueue.Steps.Add(new TransitionGameLoadingEndStep(eventBus, diContainer));
             loaderQueue.IsStarted = true;
         }
     }

@@ -6,7 +6,7 @@ namespace Controllers
     public class PlayerController : MonoBehaviour
     {
         [SerializeField] private CharacterMovementController characterMovementController;
-        [SerializeField] public PlayerCharacterInputController playerInputController;
+        [SerializeField] private PlayerCharacterInputController playerInputController;
 
         public CharacterMovementController CharacterMovementController => characterMovementController;
         public PlayerCharacterInputController PlayerInputController => playerInputController;

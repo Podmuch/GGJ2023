@@ -19,7 +19,8 @@ namespace BoxColliders.Project
 
         public override bool IsReady()
         {
-            return true;
+            var gameplayWindowLoaded = Stem.UI.GetWindow<GameplayWindow>() != null;
+            return gameplayWindowLoaded;
         }
 
         public override float GetProgress()
