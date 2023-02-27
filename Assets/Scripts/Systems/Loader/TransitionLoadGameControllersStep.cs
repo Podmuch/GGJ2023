@@ -18,6 +18,7 @@ namespace BoxColliders.Project
         private string controllersPath = "Controllers/";
         
         private string playerControllerPath = "PlayerController";
+        private string enemyControllerPath = "EnemyController";
         
         
         private IDIContainer diContainer;
@@ -56,12 +57,15 @@ namespace BoxColliders.Project
             var playerControllerPrefab = Resources.Load<PlayerController>(controllersPath + playerControllerPath);
             var playerController = MonoBehaviour.Instantiate(playerControllerPrefab, controllersParent.transform);
             playerController.Initialize(diContainer, diContext);
+            diContainer.Register(playerController, diContext);
+            
+            var enemyControllerPrefab = Resources.Load<EnemyController>(controllersPath + enemyControllerPath);
+            var enemyController = MonoBehaviour.Instantiate(enemyControllerPrefab, controllersParent.transform);
+            enemyController.Initialize(diContainer, diContext);
+            diContainer.Register(enemyController, diContext);
             
             var cameraFollowScript = MainCameraController.Instance.GetComponent<CameraFollow>();
             cameraFollowScript.carTransform = playerController.transform;
-                
-            diContainer.Register(playerController, diContext);
-            
             
             isReady = true;
         }

@@ -60,18 +60,12 @@ namespace Controllers
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.K))
-            {
-                var Brian = GameObject.Find("Brian");
-                Brian.GetComponent<Animator>().SetTrigger("Die");
-            }
         }
 
         protected  void Start()
         {
             _rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY |
                                      RigidbodyConstraints.FreezeRotationZ;
-           // gunFireController = GetComponentInChildren<GunfireController>();
         }
 
         //Move player method
@@ -87,36 +81,13 @@ namespace Controllers
             ApplyRotatation();
             UpdateAnimator(move);
         }
-
-        public void Hit()
+        
+        public void HandleAttackAnimation(bool isAttacking)
         {
-            
-            var brian = GameObject.Find("Brian");
-
-            if (licznik == 2)
-            {
-                licznik = 0;
-            }
-
-//            brian.GetComponent<Animator>().SetTrigger("Hit0" /*+ licznik.ToString()*/);
-
-            licznik++;
+            animator.SetBool(DefinedAnimationParams.Attack, isAttacking);
         }
         
         
-        
-        public void PlayShoot()
-        {
-            return;
-            if(Input.GetKey(KeyCode.Space));
-            //gunFireController.FireWeapon();
-
-            var brian = GameObject.Find("Brian");
-
-            if (Vector3.Distance(transform.position, brian.transform.position) < 2f) ;
-            brian.GetComponent<Animator>().SetTrigger("Die");
-        }
-
         //Method which is helping to rotate player GO
         private void ApplyRotatation()
         {
@@ -149,15 +120,6 @@ namespace Controllers
             }
             
             animator.SetFloat(DefinedAnimationParams.Speed, forwardAmountScaled, speedDump, Time.deltaTime);
-            animator.SetBool(DefinedAnimationParams.Attack, Input.GetKey(KeyCode.Space));
-
-            if (Input.GetKey(KeyCode.Space))
-            { 
-                var brian = GameObject.Find("Brian"); 
-                
-             // transform.LookAt(brian.transform.position);  
-            }
-            
             if(Input.GetKeyDown(KeyCode.LeftShift)) animator.SetTrigger("Dash");
         }
     }

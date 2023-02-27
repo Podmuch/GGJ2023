@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace BoxColliders.Game
 {
-    public sealed class GamePlayerMoveSystem : IInitializeSystem, IExecuteSystem
+    public sealed class GameEnemyMoveSystem : IInitializeSystem, IExecuteSystem
     {
         [DIInject] 
         private GameplayStateData stateData = default;
@@ -23,7 +23,7 @@ namespace BoxColliders.Game
         private IDIContainer diContainer;
         private object diContext;
         
-        public GamePlayerMoveSystem(IEventBus eventBus, IDIContainer diContainer, object diContext)
+        public GameEnemyMoveSystem(IEventBus eventBus, IDIContainer diContainer, object diContext)
         {
             this.diContainer = diContainer;
             this.diContext = diContext;
@@ -38,26 +38,12 @@ namespace BoxColliders.Game
 
         public void Execute()
         {
-            Move();
+            LookAtPlayer();
         }
         
-        public void Move()
+        private void LookAtPlayer()
         {
-            var vInput = inputData.JoystickY;
-            var hInput = inputData.JoystickX;
-
-            var cameraForward = cameraTransform.forward;
-            var cameraRight = cameraTransform.right;
-                
-            Vector3 move = vInput * cameraForward + hInput * cameraRight;
-            
-            var playerMoveController = playerController.CharacterMovementController;
-            playerMoveController.Move(move);
-            playerMoveController.HandleAttackAnimation(inputData.IsAttackPressed);
-            if (inputData.IsAttackPressed)
-            {
-                playerMoveController.transform.LookAt(enemyController.transform);
-            }
+            enemyController.transform.LookAt(playerController.transform);
         }
     }
 }

@@ -4,5 +4,8 @@ namespace BoxColliders.Game
     {
         public float JoystickX;
         public float JoystickY;
+
+        public bool IsAttackPressed;
+        public bool DashTrigger;
     }
 }

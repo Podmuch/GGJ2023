@@ -4,6 +4,7 @@ using PDGames.DIContainer;
 using PDGames.EventBus;
 using PDGames.Systems;
 using StemSystem;
+using UnityEngine;
 
 namespace BoxColliders.Game
 {
@@ -13,6 +14,8 @@ namespace BoxColliders.Game
         private GameplayStateData stateData = default;
         [DIInject] 
         private PlayerController playerController = default;
+        [DIInject] 
+        private EnemyController enemyController = default;
         
         private GameplayInputData inputData = default;
         private FixedJoystick joystick;
@@ -42,8 +45,7 @@ namespace BoxColliders.Game
             inputData.JoystickX = joystick.Horizontal;
             inputData.JoystickY = joystick.Vertical;
             
-                
-            stateData.IsStarted = true;
+            inputData.IsAttackPressed = Input.GetKey(KeyCode.Space);
         }
     }
 }
