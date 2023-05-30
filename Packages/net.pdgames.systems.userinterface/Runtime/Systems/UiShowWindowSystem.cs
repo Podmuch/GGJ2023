@@ -30,16 +30,20 @@ namespace PDGames.UserInterface
             for (int i = 0; i < events.Count; i++)
             {
                 string windowId = !string.IsNullOrEmpty(events[i].Id) ? events[i].Id : events[i].Type.Name;
-                ShowWindow(windowId);
+                ShowWindow(windowId, events[i].OnlyLoadWindow);
                 events[i].IsDestroyed = true;
             }
         }
 
-        private void ShowWindow(string windowId)
+        private void ShowWindow(string windowId, bool onlyLoadWindow)
         {
             var windowToShow = uiHolder.GetWindow(windowId);
-            if (windowToShow != null) windowToShow.Show();
-            else
+            
+            if (windowToShow != null && !onlyLoadWindow)
+            {
+                windowToShow.Show();
+            }
+            else if(windowToShow == null && !onlyLoadWindow)
             {
                 windowToShow = LoadWindow(windowId);
                 if (windowToShow != null) windowToShow.Show();
@@ -47,6 +51,12 @@ namespace PDGames.UserInterface
                 {
                     Debug.LogError("[UI] Cannot load window with Id=" + windowId + " prefab not found");
                 }
+            }
+            else if(windowToShow == null)
+            {
+                windowToShow = LoadWindow(windowId);
+                if (windowToShow == null)
+                    Debug.LogError("[UI] Cannot load window with Id=" + windowId + " prefab not found");
             }
         }
 

@@ -7,5 +7,6 @@ namespace PDGames.UserInterface
     {
         public string Id;
         public Type Type;
+        public bool OnlyLoadWindow;
     }
 }
