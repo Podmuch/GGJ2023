@@ -10,7 +10,8 @@ namespace BoxColliders.Game
         {
             Add(new GameInitializeGameplayStateDataSystem(eventBus, diContainer, diContext));
             Add(new GamePlayerInputSystem(eventBus, diContainer, diContext));
-            
+            Add(new GameSlowMotionReactSystem(eventBus, diContainer, diContext));
+
             Add(new GameEnemyGetHitSystem(eventBus, diContainer, diContext));
             
             Add(new GamePlayerMoveSystem(eventBus, diContainer, diContext)); 
