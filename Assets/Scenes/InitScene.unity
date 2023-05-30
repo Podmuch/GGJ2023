@@ -685,16 +685,6 @@ PrefabInstance:
       propertyPath: cameraOffset.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 924651366337622867, guid: 50d936a13f747bf45a571abe3b77fa4e,
-        type: 3}
-      propertyPath: cameraOffset.y
-      value: 9.49
-      objectReference: {fileID: 0}
-    - target: {fileID: 924651366337622867, guid: 50d936a13f747bf45a571abe3b77fa4e,
-        type: 3}
-      propertyPath: cameraOffset.z
-      value: 17.1
-      objectReference: {fileID: 0}
     - target: {fileID: 3867112212357506820, guid: 50d936a13f747bf45a571abe3b77fa4e,
         type: 3}
       propertyPath: m_RootOrder
